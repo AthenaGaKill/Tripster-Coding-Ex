@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let's Calculate Some Shizzney</title>
+</head>
+<body>
+    <h1>Let's Calculate Some Shizzney</h1>
+    <h3>The surface of the triangle : <span id="triangle"></span></h3>
+    <h3>The surface of the square is : <span id="square"></span>
+    </h3>
+    <script>
+        var height = prompt("Gief tha height:");
+        var width = prompt("Gief tha width:");
+        
+        //Triangle = 1/2 (b*h)
+        var triangle = 1/2*(height * width);
+        document.getElementById("triangle").innerHTML = triangle;
+        
+        var square = (height * width);
+        document.getElementById("square").innerHTML = square;
+
+    </script>
+</body>
+</html>

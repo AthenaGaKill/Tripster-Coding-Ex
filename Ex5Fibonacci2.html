@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Here you got them f numbers brah!</title>
+</head>
+
+<body>
+    <script>
+        //fib nrs = each number is the sum of the 2 preceding numbers f.e. 1,1,2,3,5,8...
+        //we need 2 nrs to start off with
+        var a = 1;
+        var b = 1;
+        var total = a + b; //total of the first 2 nrs => 1+1=2
+        //a+b=c => 2+3=5 3+5=8 a=b b=total => a+b=total
+        
+        var pickStr = prompt("From which mothafoeka n-th number would you like to see the fibbonacci nr?");
+        var pickNr = Number(pickStr);
+        var pickedNrMin = pickNr-3;
+        
+        var result = 0;
+        //pick which nr you want to see, 1st 2 nrs are not incl in loop so use if statement to add these options
+        if (pickNr < 3){
+            result = 1;
+        } else if (pickNr == 3){
+            result = 2;
+        } else {
+           
+        for (var i = 0; i<pickedNrMin; i++) {
+            Fibbonacci();
+            result = newTot; 
+            }
+        }
+        document.write("Here you have your goddamn nth fucking nr brah: " + result);
+        
+        //pick which nr you want to see 
+        
+        function Fibbonacci() {
+        total = a + b;
+        a = b; b = total;
+        newTot = a + b
+        }
+
+    </script>
+</body>
+
+</html>

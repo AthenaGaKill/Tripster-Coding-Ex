@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check If a Nr Is Prime</title>
+</head>
+<body>
+    <h1>Check If a Nr Is Prime</h1>
+    <script>
+        //input nr > 1
+        var input = prompt("Gief number bigger than 1:");
+        
+        while (input <=1){
+            var input = prompt("Needs to be bigger than 1 mofo! AGAIN!");
+            }
+
+        //If a number ends in 0, 2, 4, 5, 6 or 8 then it's not prime (except for 2 and 5)
+        if(input == 2 || input == 5){document.write("NAICE PRIME NUMBAH YOU GOT THERE BRAH!");
+        }else{
+        var lastChar = input.toString().split("").pop();
+            switch (lastChar){
+                case "0": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                case "2": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                case "4": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                case "5": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                case "6": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                case "8": document.write("NOT A PRIME NUMBAH BRAH!"); break;
+                default: document.write("NAICE PRIME NUMBAH YOU GOT THERE BRAH!");
+        
+            }
+        }
+
+              
+    </script>
+   
+
+</body>
+</html>
