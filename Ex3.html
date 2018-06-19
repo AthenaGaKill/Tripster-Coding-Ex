@@ -7,21 +7,52 @@
 
 <body>
 
-<script>
-var stars = "*";
-document.write("<center>" + stars + "<br>");
-// add 2 stars per level
-for (var i = 1; i < 10; i+=2) {
-// standard print one star, keep adding one on each side, and keep storing the new amount of stars in stars
- document.write("<center>"+"*" + stars.repeat(i) + "*" +"<br>");
-}
- // 2 stars need to be removed each time or 2 less stars need to be printed
-for (var i=10; i>0; i-=2){
-    document.write("<center>" + stars.repeat(i) + "<br>" );
-}
-document.write("<center>" + stars + "<br>");
+    <script>
+        var stars = "*";
+        var space = "&nbsp;";
+        var chrBreak = "<br/>";
 
-</script>
+        var nrStars = 1;
+        var nrSpace = 10;
+        //diamant logic
+        for (var i = 0; i < 9; i++) {
+
+            //space logic
+            for (var j = 0; j < nrSpace; j++) {
+                document.write(space);
+            }
+            //stars logic
+            for (var j = 0; j < nrStars; j++) {
+                document.write(stars);
+            }
+
+            document.write(chrBreak);
+            
+            //afhankelijk op welke lijn we zitten andere logica
+            if (i < 4) {
+                //opbouwen
+                nrStars+=2;
+                nrSpace-=1;
+            } else {
+                //afbouwen
+                nrStars-=2;
+                nrSpace+=1;
+            }
+        }
+
+        document.write(stars + "<br>");
+        // add 2 stars per level
+        for (var i = 1; i < 10; i += 2) {
+            // standard print one star, keep adding one on each side, and keep storing the new amount of stars in stars
+            document.write("<center>" + "*" + stars.repeat(i) + "*" + "<br>");
+        }
+        // 2 stars need to be removed each time or 2 less stars need to be printed
+        for (var i = 10; i > 0; i -= 2) {
+            document.write("<center>" + stars.repeat(i) + "<br>");
+        }
+        document.write("<center>" + stars + "<br>");
+
+    </script>
 
 </body>
 
