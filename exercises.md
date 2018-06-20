@@ -20,7 +20,6 @@ Calculate the surface of a square or triangle depending on user input.
 Users enters height and width.
 if other shapes are required code must easily be adapted.
 
-
 ## exercise 7
 Check if the entered number is a prime number
 
