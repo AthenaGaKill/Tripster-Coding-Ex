@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,4 +40,44 @@
    
 
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check If a Nr Is Prime</title>
+</head>
+<body>
+    <h1>Check If a Nr Is Prime</h1>
+    <script>
+        //input nr > 1
+        var input = prompt("Gief number bigger than 1:");//prime nr = bigger than 1, w factors 1 and itself
+        var count = 2; //needs to be bigger than 1 as we don't incl 1
+        
+        while (input <=1){
+            var input = prompt("Needs to be bigger than 1 mofo! AGAIN!");
+            }
+
+//do while with "FU" to have them try again
+do {
+        if (input != 2){ //2 is an exception and since we start our count w 2 it needs to be excluded
+            while (input != count){ //when input = it is over since we only check until then
+                if(input%count==0){input =("Not a prime brah! Type 'FU' to try again!"); break;}
+                else {count++;} 
+                } if (input==count){input = prompt("You got your self a prime! Type 'FU' to try again!");}
+                
+       }else{input = prompt("You got your self a prime!Type 'FU' to try again!");}//if else statement for when input = 2
+} while (input = "FU");
+   
+
+// alert("Feelsbadman no prime for yoe! Type 'FU' to try again!");
+        
+            
+        
+
+              
+    </script>
+   
+
+</body>
+>>>>>>> cc91e1e8af7d99c924bab7c74dde5c906f831e7c
 </html>
