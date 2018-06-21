@@ -1,0 +1,61 @@
+ <!-- Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. For example the list
+["Hello", "World", "in", "a", "frame"] gets printed as: 
+`********* 
+`* Hello * 
+`* World * 
+`* in * 
+`* a * 
+`* frame * 
+`********* -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print some shizzney in a frame</title>
+</head>
+<body>
+<script>
+        var input = prompt("Wa moetek in ne frame steke?");
+        var inputArr = input.split(" "); //turns the string into an array
+        var maxLengthWord = inputArr[0]; //2 check what the largest word in the array is => compare with that one to add spaces
+        var space = "&nbsp"; //repeat this x times depending of max length of words in array
+        var spacesCalc = 0;
+
+        // check which word is the longest so we know how long the top and bottom row need to be
+        for (var i=0;i<inputArr.length ;i++){
+            if(inputArr[i].length>maxLengthWord.length){
+               maxLengthWord = inputArr[i];
+           }           
+        } 
+        for (var i=0;i<maxLengthWord.length+3;i++){//2 extra stars as they get added to the others on the side and space
+            document.write("*");
+        }
+    
+            document.write("<br>");
+           
+        for (var i=0;i<inputArr.length;i++){
+            arrLength = inputArr[i].length;
+            spacesCalc = maxLengthWord.length - arrLength;
+            console.log(spacesCalc);
+           
+            repeatNr = space.repeat(spacesCalc);
+            console.log(repeatNr);
+            
+            document.write("* " + inputArr[i] + repeatNr + "* " + "<br>");
+        }
+
+        for (var i=0;i<inputArr.length ;i++){
+            if(inputArr[i].length>maxLengthWord.length){
+               maxLengthWord = inputArr[i];
+           }           
+        } 
+
+        for (var i=0;i<maxLengthWord.length+3 ;i++){
+            document.write("*");
+        }
+
+
+</script>
+</body>
+</html>
+
