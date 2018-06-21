@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Check If a Nr Is Prime</title>
@@ -8,34 +7,32 @@
     <script>
         //input nr > 1
         var input = prompt("Gief number bigger than 1:");//prime nr = bigger than 1, w factors 1 and itself
-                
+        var notPrime = 0;
+
         while (input <=1){
             var input = prompt("Needs to be bigger than 1 mofo! AGAIN!");
             }
-        
+             
+
         if(input!=2){ //2 is an exception so needs to be excl
             //go through all nrs to see if input%count=0
             //if input%count=0 occurs before input=count => not a prime
-            for(var i=2;i<=input;i++){
+            for(var i=2;i<input;i++){
                 if(input%i==0){
-                    alert("Not a praim numbah brah!");
                     i=input;
-                }
+                    notPrime = 1;
+                }             
+            } 
+            if (notPrime == 1) {alert("Not a foeking Praim Brah!");
+            }else{alert("Naice praim numbah brah!");}
 
-            }
                 
             //this part i keep getting stuck at with all loops
             //when it isn't = 0, it needs to calculate the remainder with the next i but how do i fix it so it knows that 
             //only once it has gone through through all "i" we know whether it is a prime nr or not
-           
-
-        }else{alert("Naice praim numbah brah!");}
-       
-
-
-
+        }else{alert("Naice praim numbah brah!");}  
+         
         
-            
         
 
               
