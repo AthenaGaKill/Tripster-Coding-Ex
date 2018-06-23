@@ -1,3 +1,4 @@
+
  <!-- Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. For example the list
 ["Hello", "World", "in", "a", "frame"] gets printed as: 
 `********* 
@@ -27,7 +28,7 @@
                maxLengthWord = inputArr[i];
            }           
         } 
-        for (var i=0;i<maxLengthWord.length+3;i++){//2 extra stars as they get added to the others on the side and space
+        for (var i=0;i<maxLengthWord.length+4;i++){//2stars and 2 spaces are added on the sides
             document.write("*");
         }
     
@@ -41,7 +42,7 @@
             repeatNr = space.repeat(spacesCalc);
             console.log(repeatNr);
             
-            document.write("* " + inputArr[i] + repeatNr + "* " + "<br>");
+            document.write("* " + inputArr[i] + repeatNr + " *" + "<br>");
         }
 
         for (var i=0;i<inputArr.length ;i++){
@@ -50,7 +51,7 @@
            }           
         } 
 
-        for (var i=0;i<maxLengthWord.length+3 ;i++){
+        for (var i=0;i<maxLengthWord.length+4 ;i++){
             document.write("*");
         }
 
@@ -59,3 +60,5 @@
 </body>
 </html>
 
+
+ 
