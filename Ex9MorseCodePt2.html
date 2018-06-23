@@ -12,7 +12,7 @@
     for(var i=0;i<inputLength;i++){ //loop through the chars
        currentChar = input.charAt(i); //current char
     
-    switch(currentChar){ //switch to give all options per letter or nr
+    switch(currentChar.toLowerCase()){ //switch to give all options per letter or nr
         case "a": document.write("*-" + " / ");break;
         case "b": document.write("-***" + " / ");break;
         case "c": document.write("-*-" + " / ");break;
@@ -52,6 +52,7 @@
         case " ": document.write("space" + " / ");break; //I used the word space here as I find it more clear to see which words are seperate
         default: document.write("Only letters and nrs are allowed brah!")
         }
+        document.write("/");
     }
 
 </script>

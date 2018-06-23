@@ -43,33 +43,41 @@ convert text to morse code
 [morsecode guide](https://en.wikipedia.org/wiki/Morse_code)
 
 ## exercise 10
-Write two functions that compute the sum of the numbers in a list using: 
+Write two different functions that compute the sum of the numbers in a list using: 
 - a for-loop
 - a while-loop
 
 ## Exercise 10b
 comment on draw a diamond with * (located in the Finished folder)
 
+## Exercise 10c
+comment on Ex7PrimeNrsv2.html
+
 ## excercise 11
 Write a program that finds the longest palindromic substring of a given string. Try to be as efficient as possible!
+'ik drink soep met een vork en geen lepel
+'ik drink soep met een vork en geen lepel. lol!
 
 ## exercise 12
-Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
-
 ### side note because I know you will try this
 Don't use any in house javascript methods
+Write a program that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+
 
 ## excercise 13
+### side note because I know you will try this
+Don't use any in house javascript methods
 Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+
+## excercise 14
 
 ### side note because I know you will try this
 Don't use any in house javascript methods
 
-## excercise 14
 Write a function that rotates a list by k elements. For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
 
-#excercise 15
+## excercise 15
 Write a function that sorts all numbers of an array in an order from low to high.
 
-#exercise 16
+## exercise 16
 Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.

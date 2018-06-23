@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sum with For While Loop</title>
+</head>
+
+<body>
+    <script>
+        //initialize
+        var arr = [1, 3, 3, 7]; //array with nrs we will take the sum of
+        //proces
+        var sum = Sum(arr);
+        //print
+        // document.write("The soem of the noembers is: " + sum);
+        printoutValue("The soem of the noembers is:",sum);
+
+        function Sum(inputArray) {
+            //intialize
+            var result = 0;
+            var i = 0;
+            //process
+            while (i < inputArray.length) {
+                result += inputArray[i];
+                printoutValue("the number at place "+i+" is:",inputArray[i]);
+                i++;
+            }
+            //return
+            return result;
+        }
+
+        function printoutValue(leadinText,leadoutText) {
+            document.write("<h1>"+leadinText+leadoutText+"</h1>");
+        }
+    </script>
+</body>
+
+</html>
