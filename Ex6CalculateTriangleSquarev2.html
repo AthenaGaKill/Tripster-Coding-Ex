@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,4 +82,52 @@
     </script>
 </body>
 >>>>>>> cc91e1e8af7d99c924bab7c74dde5c906f831e7c
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Let's Calculate Some Shizzney</title>
+</head>
+
+<body>
+    <h1>Let's Calculate Some Shizzney</h1>
+    <h3>BAZINGA MOTHAFOEKA :
+        <span id="result"></span>
+    </h3>
+
+    <script>
+
+        var chose = prompt("What do you want to calculate the surface of? U can chose between a 'square' and a 'triangle'");
+
+        switch (chose) {
+            case "square": widthHeightSquare(); break;
+            case "triangle": widthHeightTriangle(); break;
+            default: chose = prompt("Wtf is wrong with yoe! Only 'square' or 'triangle' mkay!!!! You get one more chance to try again...");
+                break;
+        }
+
+        function widthHeightSquare() {
+            var height = prompt("Gief tha height:");
+            var width = prompt("Gief tha width:");
+            var square = (height * width);
+            document.getElementById("result").innerHTML = square;
+        }
+
+        function widthHeightTriangle() {
+            // prompterino(); => why doesnt this work?
+            var height = prompt("Gief tha height:");
+            var width = prompt("Gief tha width:");
+            var triangle = (height * width) / 2 ;
+            document.getElementById("result").innerHTML = triangle;
+        }
+
+        // function prompterino(){
+        // var height = prompt("Gief tha height:"); 
+        // var width = prompt("Gief tha width:");}
+
+    </script>
+</body>
+
+>>>>>>> 996d7234edfeff03ea930942768347e83ee06b80
 </html>

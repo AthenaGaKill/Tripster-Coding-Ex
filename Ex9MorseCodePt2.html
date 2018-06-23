@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,4 +57,65 @@
 
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tania's Morse Code Spy Software</title>
+</head>
+<body>
+<script>
+    var input = prompt("Gief in your letters (or nrs) you want to see the morse code of!");
+    var inputLength = input.length; //checks the amount of chars in your sentence
+    var currentChar = ""; //var to later on put the current char in
+
+    for(var i=0;i<inputLength;i++){ //loop through the chars
+       currentChar = input.charAt(i); //current char
+    
+    switch(currentChar.toLowerCase()){ //switch to give all options per letter or nr
+        case "a": document.write("*-" + " / ");break;
+        case "b": document.write("-***" + " / ");break;
+        case "c": document.write("-*-" + " / ");break;
+        case "d": document.write("-**" + " / ");break;
+        case "e": document.write("*" + " / ");break;
+        case "f": document.write("**-*" + " / ");break; 
+        case "g": document.write("--*" + " / ");break; 
+        case "h": document.write("****" + " / ");break; 
+        case "i": document.write("**" + " / ");break; 
+        case "j": document.write("*---" + " / ");break;
+        case "k": document.write("-*-" + " / ");break; 
+        case "l": document.write("*-**" + " / ");break; 
+        case "m": document.write("--" + " / ");break; 
+        case "n": document.write("-*" + " / ");break; 
+        case "o": document.write("---" + " / ");break; 
+        case "p": document.write("*--*" + " / ");break; 
+        case "q": document.write("--*-" + " / ");break; 
+        case "r": document.write("*-*" + " / ");break; 
+        case "s": document.write("***" + " / ");break; 
+        case "t": document.write("-" + " / ");break;
+        case "u": document.write("**-" + " / ");break; 
+        case "v": document.write("***-" + " / ");break; 
+        case "w": document.write("*--" + " / ");break; 
+        case "x": document.write("-**-" + " / ");break; 
+        case "y": document.write("-*--" + " / ");break; 
+        case "z": document.write("--**" + " / ");break; 
+        case "1": document.write("*----" + " / ");break; 
+        case "2": document.write("**---" + " / ");break; 
+        case "3": document.write("***--" + " / ");break; 
+        case "4": document.write("****-" + " / ");break; 
+        case "5": document.write("*****" + " / ");break; 
+        case "6": document.write("-****" + " / ");break; 
+        case "7": document.write("--***" + " / ");break; 
+        case "8": document.write("---**" + " / ");break; 
+        case "9": document.write("----*" + " / ");break; 
+        case "0": document.write("-----" + " / ");break;  
+        case " ": document.write("space" + " / ");break; //I used the word space here as I find it more clear to see which words are seperate
+        default: document.write("Only letters and nrs are allowed brah!")
+        }
+        document.write("/");
+    }
+
+</script>
+</body>
+>>>>>>> 996d7234edfeff03ea930942768347e83ee06b80
 </html>
