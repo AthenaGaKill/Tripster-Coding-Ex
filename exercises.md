@@ -66,3 +66,5 @@ Write a function that rotates a list by k elements. For example [1,2,3,4,5,6] ro
 #excercise 15
 Write a function that sorts all numbers of an array in an order from low to high.
 
+#exercise 16
+Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.
