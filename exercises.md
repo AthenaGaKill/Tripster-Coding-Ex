@@ -43,9 +43,12 @@ convert text to morse code
 [morsecode guide](https://en.wikipedia.org/wiki/Morse_code)
 
 ## exercise 10
-Write three functions that compute the sum of the numbers in a list using: 
+Write two functions that compute the sum of the numbers in a list using: 
 - a for-loop
-- a while-loop.
+- a while-loop
+
+## Exercise 10b
+comment on draw a diamond with * (located in the Finished folder)
 
 ## excercise 11
 Write a program that finds the longest palindromic substring of a given string. Try to be as efficient as possible!
