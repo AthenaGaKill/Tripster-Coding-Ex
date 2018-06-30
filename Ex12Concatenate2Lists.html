@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Concatenate 2 Lists</title>
+</head>
+
+<body>
+    <!-- side note because I know you will try this Don't use any in house javascript methods Write a program that concatenates two
+lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3] -->
+    <script>
+        //our 2 list which we will concatenate later on
+        var list1 = [1, 2, 3];
+        var list2 = [4, 5, 6];
+
+        var newList = list1.join(""); //we will merge them in this list first as all string to turn them into an array after the loop
+
+        for (var i = 0; i < list2.length; i++) {
+            newList += list2[i];
+        }
+        
+        newList = newList.split(""); //turn the list of strings into an array
+
+        console.log("Here you haz your concatenated lists brah: " + newList);
+
+    </script>
+</body>
+
+</html>
