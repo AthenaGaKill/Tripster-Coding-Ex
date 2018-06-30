@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Find the Longest Palindrome Substring</title>
+</head>
+
+<body>
+    <script>
+        //to do:find the longest palindrome substring of a given string
+        //palindrome = sequence of chars which reads the same backwards as fwd fe madam
+
+        //INITIALIZE
+        var input = prompt("What do you want the longest palindrome substring of?");
+        console.log(input);
+
+        //turn your string into an array
+        var inputArr = input.split("");
+        //reverse changes the original array so make an extra var for this
+        var inputArrChars = inputArr.slice();
+        //reverse the sentence so we can compare the words & find palindromes
+        var inputReversed = inputArrChars.reverse().join("").split(" ");
+        //original sentence in array
+        var inputArrOriginal = input.split(" ");
+        //var to put the palindromes in
+        var palindrome = "";
+        //turn the palindrome string into an array
+        var palindromeArr = "";
+        //var to put the longest palindrome in
+        var longestPalindrome = "";
+
+        console.log(inputArrOriginal);
+        console.log(inputReversed);
+
+        //compare the original word with the word that is spelled backwards to find the palindrome
+        for (var i = 0; i < inputArrOriginal.length; i++) {
+            for (var j = inputReversed.length - 1; j >= 0; j--) {
+                if (inputArrOriginal[i] == inputReversed[j]) {
+                    palindrome += inputArrOriginal[i] + " ";
+                } palindromeArr = palindrome.split(" ");
+            }
+        } console.log(palindromeArr); //ask how to fix the extra "" in the array as a result of the space i have to add to turn string into array
+
+        //find the longest palindrome
+        for (var i = 0; i < palindromeArr.length - 1; i++) {
+            if (longestPalindrome.length < palindromeArr[i].length) {
+                longestPalindrome = palindromeArr[i];
+            }
+        } console.log("The longest Palindrome is: " + longestPalindrome);
+
+
+    </script>
+</body>
+
+</html>
