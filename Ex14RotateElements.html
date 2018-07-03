@@ -10,17 +10,17 @@
         // Don't use any in house javascript methods! 
         // Write a function that rotates a list by k elements.For example[1, 2, 3, 4, 5, 6] rotated by two becomes[3, 4, 5, 6, 1, 2].
         // Try solving this without creating a copy of the list.How many swap or move operations do you need ?
-        var list = [1, 2, 3, 4, 5];
-        var newList = "";
-        var xRotate = prompt("How many elements would you like to rotate?");
-        if (xRotate > list.length) {
+        var list = [1, 2, 3, 4, 5]; // our list array to rotate
+        var newList = ""; //list where we will rearrange the elements in
+        var xRotate = prompt("How many elements would you like to rotate?"); //how many elements to rotate input
+        if (xRotate > list.length) { //making sure noobs don't give in a larger nr than the amount of elements in the array
             alert("Plz gief in a nr lower or equal to the amount of elements in the array troll!");
         } else {
-            for (var i = xRotate; i < list.length; i++) {
+            for (var i = xRotate; i < list.length; i++) { //we'll start the loop from where the new array should start and add it in a new array
                 newList += list[i];
             }
 
-            for (var i = 0; i < xRotate; i++) {
+            for (var i = 0; i < xRotate; i++) { //we add the begin elements which we excluded before to the end of the new array = rotation complete!
                 newList += list[i];
             }
         }
