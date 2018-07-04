@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+    <script>
+        var input = prompt("Make your choice between rock, paper or scissors: "); //we need to compare with this input later on
+        var randomizer = Math.floor(Math.random() * 3); //3 options to randomize and to compare with later on
+        var AI = "";//will hold the value to compare with
+        do {
+            switch (randomizer) { //assign the game value to the randomizer
+                case 0:
+                    AI = "rock";
+                    break;
+                case 1:
+                    AI = "paper";
+                    break;
+                case 2:
+                    AI = "scissors";
+            }
+            console.log(AI);
+
+            switch (input) { //time to compare the input
+                case "rock":
+                    if (AI == "paper") {
+                        input = prompt("Your rock got rekt shrekt by paper brah!Try again or type 'FU' to end the game!");
+                    } else if (AI == "rock") {
+                        input = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!");
+                    } else {
+                        input = prompt("Just shutup... ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!");
+                    }
+                    break;
+                case "paper":
+                    if (AI == "paper") {
+                        input = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!");
+                    } else if (AI == "rock") {
+                        input = prompt("Just shutup... ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!");
+                    } else {
+                        input = prompt("Your paper got rekt shrekt by paper brah!Try again or type 'FU' to end the game!");
+                    }
+                    break;
+                case "scissors":
+                    if (AI == "paper") {
+                        input = prompt("Just shutup...ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!");
+                    } else if (AI == "rock") {
+                        input = prompt("Your scissors got rekt shrekt by paper brah!Try again or type 'FU' to end the game!");
+                    } else {
+                        input = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!");
+                    }
+                    break;
+                default:
+                    input = prompt("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!");
+
+            }
+
+        } while (input != "FU")
+
+    </script>
+</body>
+
+</html>
