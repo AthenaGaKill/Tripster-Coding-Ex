@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+        //initt
+        var numberArray = [1, 2, 3, 4, 5, 6, 78, 8, 9, 2, 0, 1552, 15412, 685, 1564118, 5156, 15212];
+        var output = 0;
+        var numberOne = 25;
+        var NumberTwo = 25;
+
+        alert(sum(numberOne, NumberTwo));
+
+        //process
+
+        //
+        alert(sum(25, 23));
+        //
+        alert(sum(numberOne, NumberTwo));
+        //
+        for (var i = 0; i < numberArray.length; i++) {
+            output = sum(output, numberArray[i]);
+        }
+
+        //output
+        alert(output);
+
+        function sum(input1, input2) {
+            var sum = input1 + input2;
+            return sum;
+        }
+    </script>
+</body>
+
+</html>

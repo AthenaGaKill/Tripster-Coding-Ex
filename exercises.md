@@ -81,3 +81,28 @@ Write a function that sorts all numbers of an array in an order from low to high
 
 ## exercise 16
 Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.
+
+
+## excercises to write with a function
+
+### exercise a
+
+Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+
+`*********
+`* Hello *
+`* World *
+`* in    *
+`* a     *
+`* frame *
+`*********
+
+## exercise b
+### side note because I know you will try this
+Don't use any in house javascript methods
+Write a program that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+
+## excercise c
+### side note because I know you will try this
+Don't use any in house javascript methods
+Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].

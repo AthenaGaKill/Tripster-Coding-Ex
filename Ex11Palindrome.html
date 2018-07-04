@@ -15,23 +15,49 @@
         var input = prompt("What do you want the longest palindrome substring of?");
         //execute
         //split the string into words in an array
-        var inputArr = input.split(" ");
+        var inputArr = split(input, " ");
+        var revWordArray = [];
         var longestWord = "";
         var reversed = "";
         var palinedromeArr = "";
 
         //call upon the under defined functions
-        reverse(); //first we reverse the sentence so we can compare the words later on
+        for (var i = 0; i < inputArr.length; i++) {
+            revWordArray[i] = reverseWord(inputArr[i]); //first we reverse the words within the sentence so we can compare the words later on
+        }
         palindromeArray(); //then we find the palindromes in the sentence and separate them
         longest(); //check for the longest palindrome
 
         document.write(longestWord);
 
+        function split(input, seperator) {
+            var returnArray = [];
+            //temp variable to store the chars until we find a separator
+            var subString = "";
+            //we loop through the string
+            for (var i = 0; i < input.length; i++) {
+                if (input[i] != seperator) {
+                    //because the current character isn't the separator we can add it to the substring
+                    subString += input[i];
+                } else {
+                    //it is the separator, time to add the substring to the return array and clear the damn thing
+                    returnArray[returnArray.length] = subString;
+                    subString = "";
+                }
+            }
+            //the final characters get added to the array
+            returnArray[returnArray.length] = subString;
+            //give me the answer
+            return returnArray;
+        }
+
         //reverse the words so we can see afterwards if the original word is the same = palindrome :)
-        function reverse() {
-            for (var i = inputArr.length - 1; i >= 0; i--) {
-                reversed += inputArr[i] + " ";
-            } return reversed; console.log(reversed);
+        function reverseWord(word) {
+            var revWord="";
+            for(var i=word.length-1;i>=0;i--){
+                revWord+=word[i];
+            }
+            return revWord;
         }
 
         //add the all the palindromes in the sentence to a seperate array from which we later on take the longest one
@@ -48,7 +74,7 @@
                         }
                     }
                 }
-            } 
+            }
         }
 
         //check which word is the longest
