@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //werkte niet...
+        //Find longest palindrome substring of a given string as efficient as possible!
+        //= A word, number or sequence of chars which reads the same backward as forward f.e.madam
+
+        //initialize
+        var input = prompt("What do you want the longest palindrome substring of?");
+        //execute
+        //split the string into words in an array
+        var inputArr = input.split(" ");
+        var longestWord = "";
+        var reversed = "";
+        var palinedromeArr = "";
+
+        //call upon the under defined functions
+        reverse(); //first we reverse the sentence so we can compare the words later on
+        palindromeArray(); //then we find the palindromes in the sentence and separate them
+        longest(); //check for the longest palindrome
+
+        document.write(longestWord);
+
+        //reverse the words so we can see afterwards if the original word is the same = palindrome :)
+        function reverse() {
+            for (var i = inputArr.length - 1; i >= 0; i--) {
+                reversed += inputArr[i] + " ";
+            } return reversed; console.log(reversed);
+        }
+
+        //add the all the palindromes in the sentence to a seperate array from which we later on take the longest one
+        function palindromeArray() {
+            for (var i = 0; i < inputArr.length; i++) {
+                for (var j = inputArr.length; j >= inputArr.length; j--) {
+                    if (inputArr[i] == reversed[j]) {
+                        palindromeArr += inputArr[i];
+                        if (palindromeArr == "") {
+                            document.write("There aint no palindromes brah!");
+                        } else {
+                            return palinedromeArr;
+                            console.log(palindromArr);
+                        }
+                    }
+                }
+            } 
+        }
+
+        //check which word is the longest
+        function longest() {
+            if (palinedromeArr != "") {
+                for (var i = 0; i < palindromeArr.length; i++) {
+                    if (palinedromeArr[i].length > longestWord.length) {
+                        longestWord = palindromeArr[i]; //when the current word is longer then the previous one => longestWord gets that value
+                    }
+                } return longestWord;
+            } else {
+                document.write("There aint no palindrome brah!");
+            }
+        }
+
+    //return
+
+    </script>
+
+</body>
+
+</html>
+<!-- 
+= A word, number or sequence of chars which reads the same backward as forward f.e. madam -->
