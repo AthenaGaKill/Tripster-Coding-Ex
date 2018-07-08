@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1s Function Exercise Redo</title>
+</head>
+
+<body>
+    <script>
+        // Snap het blijkbaar toch nog ni goe lolz...
+        // Write a function that takes a list of strings an prints them, one per line, in a rectangular frame.For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
+        // ********** Hello * * World ** in * * a ** frame * `*********
+        var input = prompt("What do you want to frame?");
+        var longestWord = "";
+
+        function frame(textToFrame) {
+            var input = prompt("Wa moetek in ne frame steke?");
+            var inputArr = input.split(" "); //turns the string into an array
+
+            function FindLongestWord(wordArr) {
+                for (var i = 0; i < wordArr.length; i++) {
+                    if (wordArr[i].length > maxLengthWord.length) {
+                        maxLengthWord = inputArr[i];
+                    }
+                }
+            } return maxLengthWord;
+
+            function fullRowStars() {
+                for (var i = 0; i < maxLengthWord.length + 4; i++) { //2stars and 2 spaces are added on the sides
+                    return "*";
+                }
+                document.write("<br>"); // geen idee wat te returnen hier... :(
+            }
+
+            function AddSpaces() {
+                for (var i = 0; i <wordArr.length; i++) {
+                    arrLength = wordArr[i].length;
+                    spacesCalc = maxLengthWord.length - arrLength;
+                    console.log(spacesCalc);
+
+                    repeatNr = space.repeat(spacesCalc);
+                    console.log(repeatNr);
+
+                    return("* " + wordArr[i] + repeatNr + " *" + "<br>");
+                }
+            }
+        }   
+            fullRowStars();
+            FindLongestWord(inputArr);
+            AddSpaces();
+            fullRowStars();
+                
+
+    </script>
+</body>
+
+</html>
