@@ -17,20 +17,19 @@
         var spacesCalc = 0;
 
 
-        function FindLongestWord(wordArr) {
-            for (var i = 0; i < wordArr.length; i++) {
+        function FindLongestWord(wordArr) { //we use inputArr as input later instead of this placeholder
+            for (var i = 0; i < wordArr.length; i++) { //compare the first index value with next ones to find longest word
                 if (wordArr[i].length > maxLengthWord.length) {
                     maxLengthWord = inputArr[i];
                 }
-            } return maxLengthWord;
-        }
+            } return maxLengthWord; //returns the longest word
+        } console.log(maxLengthWord);
 
         function fullRowStars(stars) {
             for (var i = 0; i < maxLengthWord.length + 4; i++) { //2stars and 2 spaces are added on the sides
                 document.write(stars);
-                
-            } return stars;
-        }
+            }
+        } document.write("<br>");
 
         function AddSpaces() {
             for (var i = 0; i < inputArr.length; i++) {
@@ -41,15 +40,15 @@
                 repeatNr = space.repeat(spacesCalc);
                 console.log(repeatNr);
 
-                return ("* " + inputArr[i] + repeatNr + " *" + "<br>");
+                document.write("* " + inputArr[i] + repeatNr + " *" + "<br>");
             }
         }
 
-        fullRowStars("*");
-        document.write("<br>");
+        document.write(fullRowStars("*") + "<br>");
         FindLongestWord(inputArr);
         AddSpaces();
-        fullRowStars();
+        document.write(fullRowStars("*") + "<br>");
+
 
 
     </script>
