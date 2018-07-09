@@ -7,7 +7,6 @@
 
 <body>
     <script>
-        // Snap het blijkbaar toch nog ni goe lolz...
         // Write a function that takes a list of strings an prints them, one per line, in a rectangular frame.For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
         // ********** Hello * * World ** in * * a ** frame * `*********
         var input = prompt("Wa moetek in ne frame steke?");
@@ -23,10 +22,10 @@
                     maxLengthWord = inputArr[i];
                 }
             } return maxLengthWord; //returns the longest word
-        } console.log(maxLengthWord);
+        } 
 
         function fullRowStars(stars) {
-            for (var i = 0; i < maxLengthWord.length + 4; i++) { //2stars and 2 spaces are added on the sides
+            for (var i = 0; i < maxLengthWord.length + 3; i++) { //2stars and 2 spaces are added on the sides
                 document.write(stars);
             } return stars;
         }
@@ -46,6 +45,7 @@
         }
 
         FindLongestWord(inputArr);
+        console.log(maxLengthWord);
         document.write(fullRowStars("*") + "<br>");
         AddSpaces();
         document.write(fullRowStars("*"));
