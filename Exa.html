@@ -28,8 +28,9 @@
         function fullRowStars(stars) {
             for (var i = 0; i < maxLengthWord.length + 4; i++) { //2stars and 2 spaces are added on the sides
                 document.write(stars);
-            }
-        } document.write("<br>");
+            } return stars;
+        }
+        // } document.write("<br>");
 
         function AddSpaces() {
             for (var i = 0; i < inputArr.length; i++) {
@@ -44,10 +45,10 @@
             }
         }
 
-        document.write(fullRowStars("*") + "<br>");
         FindLongestWord(inputArr);
-        AddSpaces();
         document.write(fullRowStars("*") + "<br>");
+        AddSpaces();
+        document.write(fullRowStars("*"));
 
 
 
