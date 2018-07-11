@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script>
+        function main() {
+            var input = prompt("geeft is een tekstje op met een palindroom er in, dan laat ik u wel weten welk woord het langste palindroom is.");
+            //de invoer verwerken naar een array van woorden
+            var words = input.split(" ");
+            //we gaan op zoek naar de palindromen tussen de woorden
+            var palindromen = findPalindromes(words);
+            //zoeken welk palindroom het langste is
+            var longestPalindroom = longestWord(palindromen);
+            //we geven dit weer aan de eindgebruiker
+            alert("here you have your longest palindrome you moron! " + longestPalindroom);
+        }
+
+        function findPalindromes(words) {
+            //we hebben een array nodig om onze resultaten te delen
+            var result = [];
+            //we moeten door alle woorden gaan
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                var revWord = reverse(word);
+                //we vergelijken het woord met het omgekeerde woord
+                if (word == revWord) {
+                    result[result.length] = word;
+                }
+            }
+            return result;
+        }
+
+        function reverse(word) {
+            var result = "";
+            //we lopen door de karakters van het woord
+            for (var i = word.length - 1; i >= 0; i--) {
+                result += word[i];
+            }
+            //we beginnen met het laatste letter van het woord en werken zo terug naar de begin letter
+            return result;
+        }
+
+        function longestWord(words) {
+            var result = "";
+            //we gaan door de lijst van woorden
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                if (word.length > result.length) {
+                    result = word;
+                }
+            }
+            //we gaan het langste woord eruit halen
+            return result;
+        }
+
+        main();
+    </script>
+</head>
+
+</html>
