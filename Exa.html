@@ -9,49 +9,66 @@
     <script>
         // Write a function that takes a list of strings an prints them, one per line, in a rectangular frame.For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
         // ********** Hello * * World ** in * * a ** frame * `*********
-        var input = prompt("Wa moetek in ne frame steke?");
-        var inputArr = input.split(" "); //turns the string into an array
-        var maxLengthWord = inputArr[0]; //2 check what the largest word in the array is => compare with that one to add spaces
-        var space = "&nbsp"; //repeat this x times depending of max length of words in array
-        var spacesCalc = 0;
-
-
         function FindLongestWord(wordArr) { //we use inputArr as input later instead of this placeholder
+            var word = "";
             for (var i = 0; i < wordArr.length; i++) { //compare the first index value with next ones to find longest word
-                if (wordArr[i].length > maxLengthWord.length) {
-                    maxLengthWord = inputArr[i];
+                if (wordArr[i].length > word.length) {
+                    word = wordArr[i];
                 }
-            } return maxLengthWord; //returns the longest word
-        } 
-
-        function fullRowStars(stars) {
-            for (var i = 0; i < maxLengthWord.length + 3; i++) { //2stars and 2 spaces are added on the sides
-                document.write(stars);
-            } return stars;
-        }
-        // } document.write("<br>");
-
-        function AddSpaces() {
-            for (var i = 0; i < inputArr.length; i++) {
-                arrLength = inputArr[i].length;
-                spacesCalc = maxLengthWord.length - arrLength;
-                console.log(spacesCalc);
-
-                repeatNr = space.repeat(spacesCalc);
-                console.log(repeatNr);
-
-                document.write("* " + inputArr[i] + repeatNr + " *" + "<br>");
             }
+            return word; //returns the longest word
         }
 
-        FindLongestWord(inputArr);
-        console.log(maxLengthWord);
-        document.write(fullRowStars("*") + "<br>");
-        AddSpaces();
-        document.write(fullRowStars("*"));
+        function fullRowStars(star, length) {
+            var stars = "";
+            for (var i = 0; i < length + 3; i++) { //2stars and 2 spaces are added on the sides
+                stars += star;
+            }
+            return stars;
+        }
 
+        function createText(longestWordLength, words) {
+            var result = "";
+            for (var i = 0; i < words.length; i++) {
+                //put word in a separate variable
+                var currentWord = words[i];
+                var line = createLine(longestWordLength, currentWord);
+                result += line;
+            }
+            return result;
+        }
 
+        function createLine(maxLength, word) {
+            var space = "&nbsp"; //repeat this x times depending of max length of words in array
+            wordLength = word.length;
+            nrOfSpaces = maxLength - wordLength;
+            console.log(nrOfSpaces);
+            spaces = space.repeat(nrOfSpaces);
+            console.log(spaces);
+            return "* " + word + spaces + " *" + "<br>";
+        }
 
+        function main() {
+            var input = prompt("Wa moetek in ne frame steke?");
+            var inputArr = input.split(" "); //turns the string into an array
+            var longestWord = "" //2 check what the largest word in the array is => compare with that one to add spaces
+            var spacesCalc = 0;
+
+            //look for the longest word first
+            longestWord = FindLongestWord(inputArr);
+            console.log(longestWord.length);
+            //create a row of stars that is depend on the length of the longest word
+            var outputStars = fullRowStars("*", longestWord.length);
+
+            //output row of stars
+            document.write(outputStars + "<br>");
+            //output our formatted lines
+            document.write(createText(longestWord.length, inputArr));
+            //output row of stars
+            document.write(outputStars + "<br>");
+        }
+
+        main();
     </script>
 </body>
 
