@@ -8,9 +8,9 @@
 <body>
     <script>
         function concatenateLists(arr1, arr2) {
-            var newList = ""; //list to merge the arrays in
+            var newList = []; //list to merge the arrays in
             for (var i = 0; i < arr1.length; i++) {
-                newList = newList + arr1[i] + arr2[i];
+                newList[newList.length] = arr1[i] + "," + arr2[i]; //if I don't put the comma in, it + them, but now they are strings :(
             }
             return ("Here you haz your alternated concatenated lists brah: " + newList);
         }

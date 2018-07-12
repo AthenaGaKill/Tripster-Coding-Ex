@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1s Function Exercise Redo</title>
+</head>
+
+<body>
+    <script>
+        // Write a function that takes a list of strings an prints them, one per line, in a rectangular frame.For example the list["Hello", "World", "in", "a", "frame"] gets printed as:
+        // ********** Hello * * World ** in * * a ** frame * `*********
+        var input = prompt("Wa moetek in ne frame steke?");
+        var inputArr = input.split(" "); //turns the string into an array
+
+
+        function FindLongestWord(wordArr) { //we use inputArr as input later instead of this placeholder
+            var maxLengthWord = wordArr[0];
+            for (var i = 0; i < wordArr.length; i++) { //compare the first index value with next ones to find longest word
+                if (wordArr[i].length > maxLengthWord.length) {
+                    maxLengthWord = inputArr[i];
+                }
+            } return maxLengthWord; //returns the longest word
+        }
+
+        function fullRowStars(stars) {
+            for (var i = 0; i < maxLengthWord.length + 3; i++) { //2stars and 2 spaces are added on the sides
+                document.write(stars);
+            } return stars;
+        }
+        // } document.write("<br>");
+
+        function AddSpaces() {
+            var space = "&nbsp"; //repeat this x times depending of max length of words in array
+            var spacesCalc = 0;
+
+            for (var i = 0; i < inputArr.length; i++) {
+                arrLength = inputArr[i].length;
+                spacesCalc = maxLengthWord.length - arrLength;
+                console.log(spacesCalc);
+
+                repeatNr = space.repeat(spacesCalc);
+                console.log(repeatNr);
+
+                document.write("* " + inputArr[i] + repeatNr + " *" + "<br>");
+            }
+        }
