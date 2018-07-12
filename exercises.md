@@ -106,3 +106,18 @@ Write a program that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
 ### side note because I know you will try this
 Don't use any in house javascript methods
 Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+
+need to fix this before next session
+
+## exercise d
+with the new system and the game stops when the computer has won.
+Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.
+
+## exercise e
+Check if the entered number is a prime number
+
+## exercise f
+Return the nth fibonaci number
+
+## Exercise g
+comment on draw a diamond with * (located in the Finished folder)
