@@ -10,7 +10,7 @@
         function concatenateLists(arr1, arr2) {
             var newList = []; //list to merge the arrays in
             for (var i = 0; i < arr1.length; i++) { //since both arr have the same length we can pick whichever to go through
-                newList[newList.length] = arr1[i] + "," + arr2[i]; //if I don't put the comma in, it + them, but now they are strings :(
+                newList.push(arr1[i], arr2[i]); //if I don't put the comma in, it + them, but now they are strings :(
                 //newList is an empty array, we just keep adding the values to this array starting at index 0 here
             }
             return ("Here you haz your alternated concatenated lists brah: " + newList);
