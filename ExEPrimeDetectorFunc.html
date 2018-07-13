@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prime Detector with Functions</title>
+</head>
+
+<body>
+    <script>
+        function main() {
+            //we need the user to put in a nr
+            var input = userInput();
+            //the nr needs to be bigger than 1 and excl 2 as this is an exception
+            var biggerThanOne = notOne(input);
+            //if the input's remainder = 0 then it isnt a prime
+            //if the input's remainder <> 0, we need to check the rest of the nrs uptill the nr
+            var result = primeOrNot(input);
+        }
+
+        function userInput() {
+            //we need the user to put in a nr
+            var userNr = prompt("Gief nr bigger than 1: ");
+            return userNr;
+        }
+
+        function notOne(userpick) {
+            //the nr needs to be bigger than 1
+            while (userpick <= 1) {
+                var userpick = prompt("Needs to be bigger than 1 mofo! AGAIN!");
+            }
+        }
+
+        function primeOrNot(userpick) {
+            var prime = true;
+            if (userpick != 2) { //2 is an exception so needs to be excl
+                //go through all nrs to see if input%count=0
+                //if input%count=0 occurs before input=count => not a prime
+                for (var i = 2; i < userpick; i++) {
+                    prime = (userpick % i != 0); //prime = true when this is the case
+                    if (!prime) {
+                        break;
+                    }
+                }
+                if (!prime) {
+                    alert("Not a foeking Praim Brah!");
+                } else {
+                    alert("Naice praim numbah brah!");
+                }
+            } else {
+                alert("Naice praim numbah brah!");
+            }
+        }
+        main();
+    </script>
+</body>
+
+</html>

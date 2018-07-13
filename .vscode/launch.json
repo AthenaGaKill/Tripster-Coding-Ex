@@ -8,8 +8,8 @@
                {
             "type": "chrome",
             "request": "launch",
-            "name": "ExC",
-            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExCConcatenateListsFunc.html",
+            "name": "ExD",
+            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExDRockPaperScissorsFunc.html",
             "webRoot": "${workspaceFolder}"
         },
     ]
