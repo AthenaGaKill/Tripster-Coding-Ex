@@ -10,11 +10,10 @@
         function main() {
             //we let the user chose between R,P & S
             var input = prompt("Make your choice between rock, paper or scissors: ");
-            while (input != "FU") {//we repeat this process until the user puts in FU
             var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
             var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+            console.log(nrLinkedToOptions);
             compareOptions(input, nrLinkedToOptions); //we compare the users' pick with what the pc picked
-            }
         }
 
         //we need a way to randomize between the 3 options
@@ -37,42 +36,47 @@
                 case 2:
                     AI = "scissors";
             }
-            console.log("The AI picked: " + AI);
             return AI;
 
         }
 
         //let'see if the user won by comparing the randomized options vs the one he picked
         function compareOptions(userChoice, option) {
-            switch (userChoice) {
-                case "rock":
-                    switch (option) {
-                        case "paper": userChoice = prompt("Your rock got rekt shrekt by paper brah!Try again or type 'FU' to end the game!"); break;
-                        case "rock": userChoice = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!"); break;
-                        case "scissors": userChoice = prompt("Just shutup... ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!"); break;
-                    }
-                    break;
-                case "paper":
-                    if (option == "paper") {
-                        userChoice = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!");
-                    } else if (option == "rock") {
-                        userChoice = prompt("Just shutup... ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!");
-                    } else {
-                        userChoice = prompt("Your paper got rekt shrekt by paper brah!Try again or type 'FU' to end the game!");
-                    }
-                    break;
-                case "scissors":
-                    if (option == "paper") {
-                        userChoice = prompt("Just shutup...ye you won you lucky mothafucka!Come at me again brah or type 'FU' to end the game!");
-                    } else if (option == "rock") {
-                        userChoice = prompt("Your scissors got rekt shrekt by paper brah!Try again or type 'FU' to end the game!");
-                    } else {
-                        userChoice = prompt("No winner trai again or type 'FU' if you to much of a pussy to trai again!");
-                    }
-                    break;
-                default:
-                    userChoice = prompt("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!");
-
+            var AIwon = false;
+            while (AIwon != true) {
+                switch (userChoice) {
+                    case "rock":
+                        switch (option) {
+                            case "paper": alert("Your rock got rekt shrekt by paper brah!"); AIwon = true; alert("Game Over! AI won brah!"); break;
+                            case "rock": userChoice = prompt("No winner trai again!"); break;
+                            case "scissors": userChoice = prompt("Just shutup... ye you won you lucky mothafucka!"); break;
+                        }
+                        break;
+                    case "paper":
+                        if (option == "paper") {
+                            userChoice = prompt("No winner trai again!");
+                        } else if (option == "rock") {
+                            userChoice = prompt("Just shutup... ye you won you lucky mothafucka!");
+                        } else {
+                            alert("Your paper got rekt shrekt by scissors brah!");
+                            AIwon = true;
+                            alert("Game Over! AI won brah!");
+                        }
+                        break;
+                    case "scissors":
+                        if (option == "paper") {
+                            userChoice = prompt("Just shutup...ye you won you lucky mothafucka!");
+                        } else if (option == "rock") {
+                            alert("Your scissors got rekt shrekt by rock brah!");
+                            AIwon = true;
+                            alert("Game Over! AI won brah!");
+                        } else {
+                            userChoice = prompt("No winner trai again!");
+                        }
+                        break;
+                    default:
+                        userChoice = prompt("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!"); break;
+                }
             }
         }
         main();
