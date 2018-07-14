@@ -10,10 +10,7 @@
         function main() {
             //we let the user chose between R,P & S
             var input = prompt("Make your choice between rock, paper or scissors: ");
-            var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
-            var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
-            console.log(nrLinkedToOptions);
-            compareOptions(input, nrLinkedToOptions); //we compare the users' pick with what the pc picked
+            compareOptions(input); //we compare the users' pick with what the pc picked
         }
 
         //we need a way to randomize between the 3 options
@@ -37,43 +34,51 @@
                     AI = "scissors";
             }
             return AI;
-
         }
 
         //let'see if the user won by comparing the randomized options vs the one he picked
-        function compareOptions(userChoice, option) {
-            var AIwon = false;
-            while (AIwon != true) {
-                switch (userChoice) {
+        function compareOptions(userChoice) {
+            var AIwon = 0; // we use this var to determine when to end the game
+
+            // while (AIwon != true) { //we repeat the process until de AI won
+
+            var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
+
+            var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+            while (AIwon != 1) { //we repeat the process until de AI won
+                switch (nrLinkedToOptions) {
                     case "rock":
-                        switch (option) {
-                            case "paper": alert("Your rock got rekt shrekt by paper brah!"); AIwon = true; alert("Game Over! AI won brah!"); break;
+                        switch (nrLinkedToOptions == "paper") {
+                            case "paper": alert("Your rock got rekt shrekt by paper brah!"); alert("Game Over! AI won brah!"); AIwon = 1; break; //the AI has won so it is time to leave the loop
                             case "rock": userChoice = prompt("No winner trai again!"); break;
                             case "scissors": userChoice = prompt("Just shutup... ye you won you lucky mothafucka!"); break;
                         }
                         break;
+
                     case "paper":
-                        if (option == "paper") {
+                        if (nrLinkedToOptions == "paper") {
                             userChoice = prompt("No winner trai again!");
-                        } else if (option == "rock") {
+                        } else if (nrLinkedToOptions == "rock") {
                             userChoice = prompt("Just shutup... ye you won you lucky mothafucka!");
                         } else {
                             alert("Your paper got rekt shrekt by scissors brah!");
-                            AIwon = true;
                             alert("Game Over! AI won brah!");
+                            AIwon = 1;//the AI has won so it is time to leave the loop so we set AIwon to true as the loop only keeps going while it is false
                         }
                         break;
+
                     case "scissors":
-                        if (option == "paper") {
+                        if (nrLinkedToOptions == "paper") {
                             userChoice = prompt("Just shutup...ye you won you lucky mothafucka!");
-                        } else if (option == "rock") {
+                        } else if (nrLinkedToOptions == "rock") {
                             alert("Your scissors got rekt shrekt by rock brah!");
-                            AIwon = true;
                             alert("Game Over! AI won brah!");
+                            AIwon = 1; //the AI has won so it is time to leave the loop
                         } else {
                             userChoice = prompt("No winner trai again!");
                         }
                         break;
+
                     default:
                         userChoice = prompt("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!"); break;
                 }
