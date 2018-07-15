@@ -10,7 +10,9 @@
         function main() {
             //we let the user chose between R,P & S
             var input = prompt("Make your choice between rock, paper or scissors: ");
-            compareOptions(input); //we compare the users' pick with what the pc picked
+            var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
+            var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+            compareOptions(input, nrLinkedToOptions); //we compare the users' pick with what the pc picked
         }
 
         //we need a way to randomize between the 3 options
@@ -20,10 +22,10 @@
         }
 
         //assign the randomized nr to each option being rock, paper, scissors
-        function options(rNr) {
+        function options(random) {
             var AI = "";
 
-            switch (rNr) {
+            switch (random) {
                 case 0:
                     AI = "rock";
                     break;
@@ -37,15 +39,12 @@
         }
 
         //let'see if the user won by comparing the randomized options vs the one he picked
-        function compareOptions(userChoice) {
-            var AIwon = true; // we use this var to determine when to end the game
-            var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
-
-            while (!AIwon) { //we repeat the process until de AI won
-                var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+        function compareOptions(userChoice, AIChoice) { 
+            var AIwon = false; // we use this var to determine when to end the game
+            while (AIwon != true) { //we repeat the process until de AI won
                 switch (userChoice) {
                     case "rock":
-                        switch (nrLinkedToOptions) {
+                        switch (AIChoice) {
                             case "paper": alert("Your rock got rekt shrekt by paper brah!"); alert("Game Over! AI won brah!"); AIwon = true; break; //the AI has won so it is time to leave the loop
                             case "rock": userChoice = prompt("No winner trai again!"); break;
                             case "scissors": userChoice = prompt("Just shutup... ye you won you lucky mothafucka!"); break;
@@ -53,9 +52,9 @@
                         break;
 
                     case "paper":
-                        if (nrLinkedToOptions == "paper") {
+                        if (AIChoice == "paper") {
                             userChoice = prompt("No winner trai again!");
-                        } else if (nrLinkedToOptions == "rock") {
+                        } else if (AIChoice == "rock") {
                             userChoice = prompt("Just shutup... ye you won you lucky mothafucka!");
                         } else {
                             alert("Your paper got rekt shrekt by scissors brah!");
@@ -65,10 +64,9 @@
                         break;
 
                     case "scissors":
-                        if (nrLinkedToOptions == "paper") {
-                            S
+                        if (AIChoice == "paper") {
                             userChoice = prompt("Just shutup...ye you won you lucky mothafucka!");
-                        } else if (nrLinkedToOptions == "rock") {
+                        } else if (AIChoice == "rock") {
                             alert("Your scissors got rekt shrekt by rock brah!");
                             alert("Game Over! AI won brah!");
                             AIwon = true; //the AI has won so it is time to leave the loop
@@ -80,6 +78,7 @@
                     default:
                         userChoice = prompt("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!"); break;
                 }
+                AIChoice =  options(random());
             }
         }
         main();
