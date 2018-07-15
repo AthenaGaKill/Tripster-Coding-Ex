@@ -11,7 +11,7 @@
         function main() {
             //we need user input and it needs to be a nr, not a string
             var input = nrInput();
-            var fibonaci = ResultFibonaci(input);
+            ResultFibonaci(input);
         }
 
         function nrInput() {
@@ -23,10 +23,7 @@
 
         function ResultFibonaci(nr) {
             var pickedNrMin = nr - 3;
-            var result = 0;
-            //we need 2 nrs to start off with
-            var A = 1;
-            var B = 1;
+            var result = 0;      
 
             //pick which nr you want to see, 1st 2 nrs are not incl in loop so use if statement to add these options
             if (nr < 3) {
@@ -34,10 +31,7 @@
             } else if (nr == 3) {
                 result = 2;
             } else {
-                for (var i = 0; i < pickedNrMin; i++) {
-                    Fibbonacci(A, B);
-                    result = newTot;
-                }
+                result = Fibbonacci(nrInput());
             }
             document.write("Here you have your goddamn nth fucking nr brah: " + result);
             return result;
@@ -45,12 +39,22 @@
 
         //pick which nr you want to see 
 
-        function Fibbonacci(a, b) {
+        function Fibbonacci(nr) {
+            //we need 2 nrs to start off with
+            var a = 1;
+            var b = 1;
 
-            var total = a + b; //total of the first 2 nrs => 1+1=2
-            //a+b=c => 2+3=5 3+5=8 a=b b=total => a+b=total
-            a = b; b = total;
-            newTot = a + b;
+            var pickedNrMin = nr - 3;
+
+            var result = 0;
+
+            for (var i = 0; i < pickedNrMin; i++) {
+                var total = a + b; //total of the first 2 nrs => 1+1=2
+                //a+b=c => 2+3=5 3+5=8 a=b b=total => a+b=total
+                a = b; b = total;
+                newTot = a + b;
+                result = newTot;
+            } 
             return newTot;
         }
 
