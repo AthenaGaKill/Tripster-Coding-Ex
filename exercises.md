@@ -151,9 +151,8 @@ write a function AlphabetSoup(str) take the str string parameter being passed an
 ## excercise 19
  as in put you get a number of minutes and you should return the number of hours and minutes the parameter converts to (ie. if num = 63 then the output should be 1:3). Separate the number of hours and minutes with a colon. 
 
-Sample Test Cases
-Input:126
-Output:"2:6"
-
-Input:45
-Output:"0:45"
+### Sample Test Cases
+* Input:126
+* Output:"2:6"
+* Input:45
+* Output:"0:45"
