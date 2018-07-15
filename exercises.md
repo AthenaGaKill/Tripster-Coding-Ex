@@ -53,7 +53,8 @@ convert text to morse code
 
 ## exercise 10
 
-Write two different functions that compute the sum of the numbers in a list using: 
+Write two different functions that compute the sum of the numbers in a list using:
+
 - a for-loop
 - a while-loop
 
@@ -77,7 +78,6 @@ Write a program that finds the longest palindromic substring of a given string. 
 
 Don't use any in house javascript methods
 Write a program that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
-
 
 ## excercise 13
 
@@ -138,6 +138,7 @@ with the new system and the game stops when the computer has won.
 Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.
 
 ### exercise e
+
 Check if the entered number is a prime number
 
 ### exercise f
@@ -192,7 +193,7 @@ write a function AlphabetSoup(str) take the str string parameter being passed an
 
 ## exercise 20
 
-Read the matrix of numbers stored in strArr which will be a 2D matrix that contains only the integers 1, 0, or 2. Then from the position in the matrix where a 1 is, return the number of spaces either left, right, down, or up you must move to reach an enemy which is represented by a 2. You are able to wrap around one side of the matrix to the other as well. For example: if strArr is ["0000", "1000", "0002", "0002"] then this looks like the following: 
+Read the matrix of numbers stored in strArr which will be a 2D matrix that contains only the integers 1, 0, or 2. Then from the position in the matrix where a 1 is, return the number of spaces either left, right, down, or up you must move to reach an enemy which is represented by a 2. You are able to wrap around one side of the matrix to the other as well. For example: if strArr is ["0000", "1000", "0002", "0002"] then this looks like the following:
 
 0 0 0 0
 1 0 0 0
