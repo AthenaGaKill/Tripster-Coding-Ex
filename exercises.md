@@ -208,3 +208,5 @@ For this input your program should return 2 because the closest enemy (2) is 2 s
 
 - Input:"0000", "2010", "0000", "2002"
 - Output:2
+
+test
