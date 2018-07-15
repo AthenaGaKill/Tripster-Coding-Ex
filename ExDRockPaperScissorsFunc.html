@@ -38,18 +38,15 @@
 
         //let'see if the user won by comparing the randomized options vs the one he picked
         function compareOptions(userChoice) {
-            var AIwon = 0; // we use this var to determine when to end the game
-
-            // while (AIwon != true) { //we repeat the process until de AI won
-
+            var AIwon = true; // we use this var to determine when to end the game
             var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
 
-            var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
-            while (AIwon != 1) { //we repeat the process until de AI won
-                switch (nrLinkedToOptions) {
+            while (!AIwon) { //we repeat the process until de AI won
+                var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+                switch (userChoice) {
                     case "rock":
-                        switch (nrLinkedToOptions == "paper") {
-                            case "paper": alert("Your rock got rekt shrekt by paper brah!"); alert("Game Over! AI won brah!"); AIwon = 1; break; //the AI has won so it is time to leave the loop
+                        switch (nrLinkedToOptions) {
+                            case "paper": alert("Your rock got rekt shrekt by paper brah!"); alert("Game Over! AI won brah!"); AIwon = true; break; //the AI has won so it is time to leave the loop
                             case "rock": userChoice = prompt("No winner trai again!"); break;
                             case "scissors": userChoice = prompt("Just shutup... ye you won you lucky mothafucka!"); break;
                         }
@@ -63,17 +60,18 @@
                         } else {
                             alert("Your paper got rekt shrekt by scissors brah!");
                             alert("Game Over! AI won brah!");
-                            AIwon = 1;//the AI has won so it is time to leave the loop so we set AIwon to true as the loop only keeps going while it is false
+                            AIwon = true;//the AI has won so it is time to leave the loop so we set AIwon to true as the loop only keeps going while it is false
                         }
                         break;
 
                     case "scissors":
                         if (nrLinkedToOptions == "paper") {
+                            S
                             userChoice = prompt("Just shutup...ye you won you lucky mothafucka!");
                         } else if (nrLinkedToOptions == "rock") {
                             alert("Your scissors got rekt shrekt by rock brah!");
                             alert("Game Over! AI won brah!");
-                            AIwon = 1; //the AI has won so it is time to leave the loop
+                            AIwon = true; //the AI has won so it is time to leave the loop
                         } else {
                             userChoice = prompt("No winner trai again!");
                         }

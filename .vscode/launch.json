@@ -8,8 +8,8 @@
                {
             "type": "chrome",
             "request": "launch",
-            "name": "ExD",
-            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExDRockPaperScissorsFunc.html",
+            "name": "ExF Fibonnacci w func",
+            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExFFibonacciFunc.html",
             "webRoot": "${workspaceFolder}"
         },
     ]
