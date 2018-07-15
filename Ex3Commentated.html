@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rows of *3</title>
+</head>
+
+<body>
+
+    <script>
+        var stars = "*"; //we gebruiken sterren om de vorm te maken
+        var space = "&nbsp;"; //we gebruiken spaces om de juiste vorm te creëren, "&nbsp;" = space
+        var chrBreak = "<br/>"; 
+
+        var nrStars = 1; 
+        var nrSpace = 10;
+        //diamant logic
+        for (var i = 0; i < 9; i++) { //er zyn 9 rijen die geprint moeten worden
+
+            //space logic
+            for (var j = 0; j < nrSpace; j++) { //we printen 10 spaces de eerste maal op de eerste lijn
+                document.write(space);
+            }
+            //stars logic
+            for (var j = 0; j < nrStars; j++) { //we printen 1 ster op de eerste lijn
+                document.write(stars);
+            }
+
+            document.write(chrBreak); // na de lijn geschreven te hebben gaan we naar de volgende lijn
+            
+            //afhankelijk op welke lijn we zitten andere logica
+            if (i < 4) {
+                //opbouwen
+                nrStars+=2; //de 4 eerste lijnen bouwen we de sterren op per 2
+                nrSpace-=1; //en we bouwen de spaces af van 1 telkens (enkel linkerkant telt)
+            } else {
+                //afbouwen
+                nrStars-=2; //na lijn 4 bouwen we de sterren af per 2
+                nrSpace+=1; //en bouwen we de spaces op met 1 per keer
+            }
+        }
+        document.write(stars + "<br>");
+
+
+
+        //dit was myn ez pz manier lol
+        // add 2 stars per level
+        for (var i = 1; i < 10; i += 2) {
+            // standard print one star, keep adding one on each side, and keep storing the new amount of stars in stars
+            document.write("<center>" + "*" + stars.repeat(i) + "*" + "<br>");
+        }
+        // 2 stars need to be removed each time or 2 less stars need to be printed
+        for (var i = 10; i > 0; i -= 2) {
+            document.write("<center>" + stars.repeat(i) + "<br>");
+        }
+        document.write("<center>" + stars + "<br>");
+
+    </script>
+
+</body>
+
+</html>
