@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors w Functions</title>
+</head>
+
+<body>
+    <script>
+        function main() {
+            var AIWon = false;
+            do {
+                //we let the user chose between R,P & S
+                var input = prompt("Make your choice between rock, paper or scissors: ");
+                var randomNr = random(); //picks a random nr being 0,1 or 2 and returns it
+                var nrLinkedToOptions = options(randomNr); //each nr gets linked to one of the 3 options
+                AIWon = compareOptions(input, nrLinkedToOptions); //we compare the users' pick with what the pc picked
+                printResult(AIWon, input, nrLinkedToOptions);//we print out the result
+            } while (!AIWon);
+        }
+
+        function printResult(WinSituation, userInput, AIInput) {
+            if (WinSituation) {
+                //AI Won
+                alert("too bad mofo I had a " + AIInput + " and you only had a misserable " + userInput + "! Go cry in a corner....")
+            } else {
+                //AI didn't win let's see what happened
+                if (userInput != AIInput) {
+                    alert("damned I had a " + AIInput + " and you a mighty " + userInput + "! let's try this again....")
+                }
+                else {
+                    alert("well we both had a " + AIInput + " and you a mighty " + userInput + "! let's try this again....")
+                }
+            }
+        }
+
+        //we need a way to randomize between the 3 options
+        function random() {
+            var randomizer = Math.floor(Math.random() * 3); //will give option 0,1,2
+            return randomizer;
+        }
+
+        //assign the randomized nr to each option being rock, paper, scissors
+        function options(random) {
+            var AI = "";
+
+            switch (random) {
+                case 0:
+                    AI = "rock";
+                    break;
+                case 1:
+                    AI = "paper";
+                    break;
+                case 2:
+                    AI = "scissors";
+            }
+            return AI;
+        }
+
+        //let'see if the user won by comparing the randomized options vs the one he picked
+        function compareOptions(userChoice, AIChoice) {
+            var AIwon = false; // we use this var to determine when to end the game
+            switch (userChoice) {
+                case "rock":
+                    AIWon = AIChoice == "paper";
+                    break;
+                case "paper":
+                    AIWon = AIChoice == "scissors";
+                    break;
+                case "scissors":
+                    AIWon = AIChoice == "rock"; break;
+                    break;
+                default:
+                    alert("Use one of these 3 options brah!!! Chose rock, paper or scissors so I can rek you mkay?!"); break;
+            }
+            return AIwon;
+        }
+
+        main();
+
+
+    </script>
+</body>
+
+</html>
