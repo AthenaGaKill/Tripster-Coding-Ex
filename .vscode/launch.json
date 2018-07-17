@@ -4,12 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "ExFFibonaciFunc",
+            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExFFibonacciFunc.html",
+            "webRoot": "${workspaceFolder}"
+        },
                {
             "type": "chrome",
             "request": "launch",
-            "name": "ExDRPS",
-            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/ExDRockPaperScissorsFunc.html",
+            "name": "PrimeZeef",
+            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/PrimeZeef.html",
             "webRoot": "${workspaceFolder}"
         },
     ]
