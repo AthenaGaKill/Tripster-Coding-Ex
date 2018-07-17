@@ -148,6 +148,7 @@ Return the nth fibonaci number
 ### Exercise g
 
 comment on draw a diamond with * (located in the Finished folder)
+now do this with a function
 
 ### exercise h
 
@@ -157,9 +158,34 @@ if other shapes are required code must easily be adapted.
 
 ## excercise 17
 
+write a function AlphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the string.
+
+### Sample Test Cases
+var word = "coderbyte";
+return word;
+
+- Input:"coderbyte"
+- Output:"bcdeeorty"
+
+- Input:"hooplah"
+- Output:"ahhloop"
+
+## excercise 18
+
+ as input you get a number of minutes and you should return the number of hours and minutes the parameter converts to (ie. if num = 63 then the output should be 1:3). Separate the number of hours and minutes with a colon.
+
+### Sample Test Cases
+
+- Input:126
+- Output:"2:6"
+- Input:45
+- Output:"0:45"
+
+## excercise 19
+
 General Statement: Convert a given US dollar amount to Pounds, Lira, Francs, Marks, or Yen.
 
-Input: The first line in the data set is an integer that represents the number of data collections that follow. Each collection consists of an integer US dollar amount followed by the name of the currency to be converted to.
+Input: The first line in the data set is an integer that represents the number of data collections that follow. Each collection consists of an number US dollar amount followed by the name of the currency to be converted to.
 
 Output: Output a dollar sign ($), the US dollar amount and the words CONVERTS TO and then the converted amount followed by the currency unit name.
 If the conversion factor is an integer, output an integer. If it is a decimal, round to 2 decimal places.
@@ -168,28 +194,8 @@ The output is to be formatted exactly like that for the sample output given belo
 Assumptions: The US dollar amount is an integer in the range 1..500.
 All letters are upper case.
 
-## excercise 18
-
-write a function AlphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the string.
-
-### Sample Test Cases
-
-- Input:"coderbyte"
-- Output:"bcdeeorty"
-
-- Input:"hooplah"
-- Output:"ahhloop"
-
-## excercise 19
-
- as in put you get a number of minutes and you should return the number of hours and minutes the parameter converts to (ie. if num = 63 then the output should be 1:3). Separate the number of hours and minutes with a colon.
-
-### Sample Test Cases
-
-- Input:126
-- Output:"2:6"
-- Input:45
-- Output:"0:45"
+50 Lira = $x
+50 Pounds = $x
 
 ## exercise 20
 
@@ -209,5 +215,3 @@ For this input your program should return 2 because the closest enemy (2) is 2 s
 
 - Input:"0000", "2010", "0000", "2002"
 - Output:2
-
-test
