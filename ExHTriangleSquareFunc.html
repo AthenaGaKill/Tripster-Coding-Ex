@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Square or Triangle?</title>
+</head>
+
+<body>
+    <h1><center>Square or Triangle? Chose wisely! :p</center></h1>
+    <script>
+        function main() { //I 1st had a print function as well, but this seemed shorter and more clear 2 me tbh :)
+            var chose = prompt("What do you want to calculate the surface of? U can chose between a 'square' and a 'triangle'");
+            var height = prompt("Gief tha height:");
+            var width = prompt("Gief tha width:");
+            pickSquareOrTriangle(chose, height, width); //whichever object they picked, the height and width of it defined by user
+        }
+
+        function pickSquareOrTriangle(pick, h, w) {
+            switch (pick) {
+                case "square": alert("This is the surface of your square: " + widthHeightSquare(h, w)); break; //they picked square = it will call the square calcuation function and we print out the result
+                case "triangle": alert("This is the surface of your triangle: " + widthHeightTriangle(h, w)); break; //they picked triangle = it will call the triangle calc function and we print out the result
+                default: pick = prompt("Wtf is wrong with yoe! Only 'square' or 'triangle' mkay!!!! You get one more chance to try again..."); //when they write anything else then these 2 options they get this
+                    break;
+            }
+        }
+
+        function widthHeightSquare(h, w) { //calculates the surface of a square
+            var square = (h * w);
+            return square;
+        }
+
+        function widthHeightTriangle(h, w) { //calculates the surface of a triangle
+            var triangle = 1 / 2 * (h * w);
+            return triangle;
+        }
+
+        main();
+        
+    </script>
+</body>
