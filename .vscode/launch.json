@@ -14,8 +14,8 @@
                {
             "type": "chrome",
             "request": "launch",
-            "name": "PrimeZeef",
-            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/PrimeZeef.html",
+            "name": "alphabetsoup",
+            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/Ex17AlphabetSoup.html",
             "webRoot": "${workspaceFolder}"
         },
     ]
