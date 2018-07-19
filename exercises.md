@@ -197,6 +197,18 @@ All letters are upper case.
 50 Lira = $x
 50 Pounds = $x
 
+## extra excercise for if you get stuck
+Make a program that extracts the maxumum ammount information of a rijkrestigster number and that it is a leggit number.
+
+Het identificatienummer bevat 11 cijfers:[1]
+
+Een eerste groep van zes cijfers, gevormd door de geboortedatum in de volgorde: jaar, maand, dag. Maand en/of dag kunnen nul zijn indien de exacte geboortedatum niet bekend is. Indien de persoon niet ingeschreven is in het Rijksregister, maar er toch gegevens moeten worden bijgehouden voor de sociale zekerheid, bijvoorbeeld buitenlandse werknemers die minder dan drie maanden in België verblijven of grensarbeiders, dan wordt een bisnummer toegekend. Bij het bisnummer wordt de geboortemaand verhoogd met 20 of 40. Als bij de aanvraag het geslacht bekend is, wordt de geboortemaand verhoogd met 40, anders wordt ze verhoogd met 20. Indien de persoon vluchteling is en de geboortedatum niet gekend is, wordt de geboortemaand op 00 gezet en de geboortedag op 00 gezet.
+Een tweede groep van drie cijfers dient als herkenning van de personen die op dezelfde dag geboren zijn. Dit reeksnummer is even voor een vrouw en oneven voor een man. Het is de dagteller van de geboortes. Voor een man van 001 tot 997 en voor een vrouw van 002 tot 998.
+Een derde groep van twee cijfers is een controlegetal op basis van de 9 voorafgaande cijfers. Dat wordt berekend door het getal van negen cijfers, dat gevormd wordt door de aaneenschakeling van de geboortedatum en het reeksnummer, te delen door 97. De rest van deze deling ("modulo") wordt van 97 afgetrokken. Het aldus verkregen verschil is het controlenummer. Voor personen geboren in of na 2000 moet men een 2 voor het getal van negen cijfers zetten (+ 2000000000) alvorens te delen door 97.
+Voorbeeld: Is een man geboren op 18 mei 1993, dan is een mogelijk nummer 93051822361. Immers, 930518223 gedeeld door 97 is 9592971+36. Het verschil van 97 en de rest levert 97 - 36 = 61 op.
+
+
+
 ## exercise 20
 
 Read the matrix of numbers stored in strArr which will be a 2D matrix that contains only the integers 1, 0, or 2. Then from the position in the matrix where a 1 is, return the number of spaces either left, right, down, or up you must move to reach an enemy which is represented by a 2. You are able to wrap around one side of the matrix to the other as well. For example: if strArr is ["0000", "1000", "0002", "0002"] then this looks like the following:
