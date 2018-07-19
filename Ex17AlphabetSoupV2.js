@@ -18,7 +18,7 @@ function operationReplacement(word) {
             }
         }
     }
-    word = word.join("");
+    word = word.join(""); //join them back into an string
     return word;
 }
 main();
