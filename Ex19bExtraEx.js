@@ -42,14 +42,12 @@ function day(nr) {
 
 function unknown(birthday, birthmonth) { //
     var dateUnknown = true;
-    if ((birthday == "00") || (birthmonth == "00")) {
-        return dateUnkown;
+    if (birthday === "00" || birthmonth === "00") {
+        return dateUnknown;
     } else {
         dateUnknown = false;
         return dateUnknown;
     }
-
-
 }
 //when we have to /97 we use parseInt() to turn the string into a number
 
