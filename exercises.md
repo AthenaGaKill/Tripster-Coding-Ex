@@ -209,7 +209,7 @@ Voorbeeld: Is een man geboren op 18 mei 1993, dan is een mogelijk nummer 9305182
 
 ## excercise 20
 
-write some code that will rework the input of a phonenumber to the internation standard. If a phonenumber is entered without a country code you can asume that the phonenumber is Belgian.
+write some code that will rework the input of a phonenumber to the international standard. If a phonenumber is entered without a country code you can asume that the phonenumber is Belgian. (+32)
 
 some sample inputs:
 015/51.67.54
@@ -226,8 +226,11 @@ sample output
 +32470452233
 +3215516754
 
+#excercise 21
 
-## exercise 20
+swap your dads name with your moms.
+
+## exercise 22
 
 Read the matrix of numbers stored in strArr which will be a 2D matrix that contains only the integers 1, 0, or 2. Then from the position in the matrix where a 1 is, return the number of spaces either left, right, down, or up you must move to reach an enemy which is represented by a 2. You are able to wrap around one side of the matrix to the other as well. For example: if strArr is ["0000", "1000", "0002", "0002"] then this looks like the following:
 
