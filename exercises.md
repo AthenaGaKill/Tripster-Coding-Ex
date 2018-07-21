@@ -207,6 +207,24 @@ Een tweede groep van drie cijfers dient als herkenning van de personen die op de
 Een derde groep van twee cijfers is een controlegetal op basis van de 9 voorafgaande cijfers. Dat wordt berekend door het getal van negen cijfers, dat gevormd wordt door de aaneenschakeling van de geboortedatum en het reeksnummer, te delen door 97. De rest van deze deling ("modulo") wordt van 97 afgetrokken. Het aldus verkregen verschil is het controlenummer. Voor personen geboren in of na 2000 moet men een 2 voor het getal van negen cijfers zetten (+ 2000000000) alvorens te delen door 97.
 Voorbeeld: Is een man geboren op 18 mei 1993, dan is een mogelijk nummer 93051822361. Immers, 930518223 gedeeld door 97 is 9592971+36. Het verschil van 97 en de rest levert 97 - 36 = 61 op.
 
+## excercise 20
+
+write some code that will rework the input of a phonenumber to the internation standard. If a phonenumber is entered without a country code you can asume that the phonenumber is Belgian.
+
+some sample inputs:
+015/51.67.54
+0470/45.22.33
+0032470452233
+(00)32470452233
+0044142341156
++1-541-754-3010
+(541) 754-3010
+001-541-754-3010
+1-541-754-3010
+
+sample output
++32470452233
++3215516754
 
 
 ## exercise 20
