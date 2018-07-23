@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 //id nr = 11nrs
 //eerste 6: jj,mm,dd
 //maand en/of dag zyn 0 indien niet gekend
@@ -25,7 +25,7 @@ function main() {
     var monthOfBirth = month(input); //outputs 2nrs = month of birth
     var dayOfBirth = day(input); //outputs 2nrs = day of birth
     var isARefugee = refugee(dayOfBirth, monthOfBirth); //checks for refugees and gives back a true or false value
-    var monthFullWord = monthFullWritten(monthOfBirth, sexOfTempWorker);
+    var monthFullWord = monthFullWritten(monthOfBirth, sexOfTempWorkerKnown);
     var genderOfPerson = gender(input);
     var fullYear = millenialOrNot(input, YearOfBirth);
     //checks bisnr from temporary workers and gives back true if gender is know and false when it isnt
@@ -59,7 +59,7 @@ function day(nr) {
 
 function refugee(birthday, birthmonth) { //check if it is a refugee or not...
     var dateUnknown = true;
-    if (birthday === 00 && birthmonth === 00) { //if these are 00 = refugee
+    if (birthday == 00 && birthmonth == 00) { //if these are 00 = refugee
         return dateUnknown; //so we return true
     } else {
         dateUnknown = false; // if not then we return false as it isnt a refugee
@@ -113,34 +113,31 @@ function millenialOrNot(nr, birthYear) {
 
 function monthFullWritten(birthmonth, sexKnown) { //this turns the number indicating the month, into a fullout written month
     var monthInWord = "";
-    var birthmonthResult = 0;
-
+    
     if (birthmonth > 12 && sexKnown == true) { //if month>12 and we know the gender then we need to -40 to find the month
-        birtmonthResult = birthmonth - 40;
+        birtmonth = birthmonth - 40;
     } else if (birthmonth > 12 && sexKnown == false) { //if month>12 and we don't know the gender we need to -20 to find the month
-        birthmonthResult = birthmonth - 20;
-    } else {
-        birtmonthResult = birthmonth;
-    }
-
-    switch (birthmonthResult) {
-        case 1: monthInWord = "january";
+        birthmonth = birthmonth - 20;
+    } 
+       
+    switch (birthmonth) {
+        case 01: monthInWord = "january";
             break;
-        case 2: monthInWord = "february";
+        case 02: monthInWord = "february";
             break;
-        case 3: monthInWord = "march";
+        case 03: monthInWord = "march";
             break;
-        case 4: monthInWord = "april";
+        case 04: monthInWord = "april";
             break;
-        case 5: monthInWord = "mai";
+        case 05: monthInWord = "mai";
             break;
-        case 6: monthInWord = "june";
+        case 06: monthInWord = "june";
             break;
-        case 7: monthInWord = "july";
+        case 07: monthInWord = "july";
             break;
-        case 8: monthInWord = "august";
+        case 08: monthInWord = "august";
             break;
-        case 9: monthInWord = "september";
+        case 09: monthInWord = "september";
             break;
         case 10: monthInWord = "oktober";
             break;
@@ -150,8 +147,10 @@ function monthFullWritten(birthmonth, sexKnown) { //this turns the number indica
             break;
         default: monthInWord = " "
     }
-    return monthInWord;
+    console.log("Month written out: " + monthInWord);
+    return monthInWord;    
 }
+
 function print(dayOfBirth, monthOfBirth, monthFullWord, YearOfBirth, fullYear, sexOfTempWorkerKnown, genderOfPerson, isARefugee) {
     console.log("Year of birth: " + YearOfBirth);
     console.log("Month of birth: " + monthOfBirth);
