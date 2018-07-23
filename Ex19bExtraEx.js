@@ -30,12 +30,14 @@ function main() {
 
     var isARefugee = refugee(dayOfBirth, monthOfBirth); //checks for refugees
     if (isARefugee === true) { //we only need output if the person is a refugee
-        console.log("This is a refugee, and that's why the nr starts with 0000.");
+        console.log("This " + gender(input) + " is a refugee, and that's why the nr starts with 0000.");
     }
+
+    var monthFullWord = monthFullWritten(monthOfBirth, sexOfTempWorker);
 
     if (monthOfBirth > 12) { //we only need to check for a bisnr if the monthnr > 12 (there are 12 months in a year...)
         var sexOfTempWorker = sexTempWorker(monthOfBirth); //checks bisnr from temporary workers
-        if (sexOfTempWorker === true) {
+        if (sexOfTempWorker == true) {
             console.log(" ==> This " + genderOfPerson + " was born on: " + dayOfBirth + " " + monthFullWord + " " + fullYear);
         } else {
             console.log("The gender of the temporary worker is unknown.");
@@ -43,15 +45,25 @@ function main() {
     }
 
     var genderOfPerson = gender(input);
-    if (genderOfPerson === true) { //only if we know the gender will we print it
+    if (sexOfTempWorker === true) { //only if we know the gender will we print it
         console.log("Gender of the person: " + genderOfPerson);
     }
 
     var fullYear = millenialOrNot(input, YearOfBirth);   // will tell us when the person was born and so tell us if it is a millenial or not :)
-    var monthFullWord = monthFullWritten(monthOfBirth);
-    if (dayOfBirth !== 00 && monthOfBirth !== 00) { //0000 = refugee so if it's not the case we can use the normal notation
-        console.log("==> This " + genderOfPerson + " was born on: " + dayOfBirth + " " + monthFullWord + " " + fullYear);
-    } else { //if the day and month = 0000 that means the person is a refugee
+
+    if (dayOfBirth != 00 && monthOfBirth != 00) { //0000 = refugee so if it's not the case we can use the normal notation
+        console.log("==>  " + dayOfBirth + " " + monthFullWord + " " + fullYear);
+    }
+    switch (dayOfBirth) {
+        case 00: if (monthOfBirth != 00) { //when only the day isnt known we need a different output
+            console.log("==>  " + monthFullWord + " " + fullYear);
+        }
+        default: if (monthOfBirth == 00) {//when only the month isnt known we also need a different output
+            console.log("==>  " + dayOfBirth + " , month unknown, " + fullYear);
+        }
+            break;
+    }
+    if (dayOfBirth == 00 && monthOfBirth == 00) {
         console.log("==> This person is a refugee born in: " + fullYear);
     }
 }
@@ -66,7 +78,7 @@ function year(nr) { //first 2 nrs of the number = the year of birth
 function month(nr) {
     var month = nr[2] + nr[3];
     var monthInt = parseInt(month);
-    if (monthInt > 51) { //is the max nr that can be used taken into account the +40bisnr for temp workers from whom the gender is know / not sure how to do it for all seperate
+    if (monthInt > 52) { //is the max nr that can be used taken into account the +40bisnr for temp workers from whom the gender is know / not sure how to do it for all seperate
         nr = prompt("I think you might have been mistaken. There aren't that many days in a month brah!");
     }
     console.log("Month of birth: " + monthInt);
@@ -94,16 +106,14 @@ function refugee(birthday, birthmonth) { //check if it is a refugee or not...
 }
 
 function sexTempWorker(birthmonth) { //temp workers get a bisnr. +20 when gender unknown and +40 when gender is known
-    var SexWorkerKnown = true;
     var minTwenty = birthmonth - 20; //birthmonth +20 when gender unknown
     var minForty = birthmonth - 40;//birthmonth +40 when gender known
 
     if (minTwenty <= 12) { //if the birthmonth - 20 is smaller or = to 12 (12months in a year) = gender unknown
-        SexWorkerKnown = false;
-        return SexWorkerKnown;
+        return false;
     }
     if (minForty <= 12) { //if the bm -40 is smaller or = to 12 = gender known
-        return SexWorkerKnown;
+        return true;
     }
 }
 
@@ -121,36 +131,37 @@ function gender(nr) {
 //personen in of na 2000 = +20000000000 before/97
 function millenialOrNot(nr, birthYear) {
     var firstNineNrs = ""; //we will put the first 9 nrs in this nr => used parseInt on the others already so couldnt concatenate them lol
-    var nrMinTwoBillion = firstNineNrsInt + 20000000000; //when born in or after 2000 = +2billion before div by 97 
-    var nrDivByNinetyseven = nrMinTwoBillion / 97; //we need to div the nr by 97 to find the last 2 nrs. we put it in a new var so we can use this to compare later on.
-    var lastTwoNrs = nr[9] + nr[10]; //we get the last 2 nrs from the input to compare
-    var lastTwoNrsInt = parseInt(lastTwoNrs); //we make the nr an integer 
-
-    for (var i = 0; i < nr.length - 2; i++) {
+    for (var i = 0; i < nr.length - 2; i++) { //we get the 1st 9 nrs from our input using this loop
         firstNineNrs += nr[i];
     }
+    var firstNineNrsInt = parseInt(firstNineNrs); //our loop generated a string so we need to turn it into a nr to make the calculations later on
 
-    //!!!!!!!!!!!!! needed to be % and you compare the leftover !!!!!
+    var nrPlusTwoBillion = firstNineNrsInt + 2000000000; //when born in or after 2000 = +2000000000 before calculating the remainder of 97 
+    var nrModuloByNinetyseven = nrPlusTwoBillion % 97; //we need the remainder of that nr and 97 to find the last 2 nrs. we put it in a new var so we can use this to compare later on.
+    var lastTwoNrs = nr[9] + nr[10]; //we get the last 2 nrs from the input to compare
+    var lastTwoNrsInt = parseInt(lastTwoNrs); //we make the nr an integer 
+    var ninetySevenMinModResult = 97 - nrModuloByNinetyseven; //we need to substract 97 with the result of the modulo and compare this nr later on to know whether the person is a millenial or not
 
-    var firstNineNrsInt = parseInt(firstNineNrs);
-
-    if (nrDivByNinetyseven !== lastTwoNrsInt) {
+    if (ninetySevenMinModResult !== lastTwoNrsInt) { //if the last 2 nrs aren't the same then the person was born before 2000
         return "19" + birthYear;
     } else {
-        return "20" + birthYear;
+        return "20" + birthYear; //if the last 2 nrs are the same then it means a 2 got added before the nr and the person is a millenial
     }
 }
 
 function monthFullWritten(birthmonth, sexKnown) { //this turns the number indicating the month, into a fullout written month
     var monthInWord = "";
+    var birthmonthResult = 0;
 
     if (birthmonth > 12 && sexKnown == true) { //if month>12 and we know the gender then we need to -40 to find the month
-        birthmonth -= 40;
+        birtmonthResult = birthmonth - 40;
     } else if (birthmonth > 12 && sexKnown == false) { //if month>12 and we don't know the gender we need to -20 to find the month
-        birthmonth -= 20;
+        birthmonthResult = birthmonth - 20;
+    } else {
+        birtmonthResult = birthmonth;
     }
 
-    switch (birthmonth) {
+    switch (birthmonthResult) {
         case 1: monthInWord = "january";
             return monthInWord;
             break;
@@ -187,7 +198,12 @@ function monthFullWritten(birthmonth, sexKnown) { //this turns the number indica
         case 12: monthInWord = "december";
             return monthInWord;
             break;
+        default: monthInWord = " "
+            return monthInWord;
     }
 }
+
+//MAKE A PRINT OUT FUNCTION TO PRINT OUT ALL INFO  
+
 
 main();
