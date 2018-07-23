@@ -121,7 +121,7 @@ function gender(nr) {
 //personen in of na 2000 = +20000000000 before/97
 function millenialOrNot(nr, birthYear) {
     var firstNineNrs = ""; //we will put the first 9 nrs in this nr => used parseInt on the others already so couldnt concatenate them lol
-    var nrMinTwoBillion = firstNineNrsInt - 20000000000; //when born in or after 2000 = +2billion before div by 97 so we need to extract it now to figure out when someone is born
+    var nrMinTwoBillion = firstNineNrsInt + 20000000000; //when born in or after 2000 = +2billion before div by 97 
     var nrDivByNinetyseven = nrMinTwoBillion / 97; //we need to div the nr by 97 to find the last 2 nrs. we put it in a new var so we can use this to compare later on.
     var lastTwoNrs = nr[9] + nr[10]; //we get the last 2 nrs from the input to compare
     var lastTwoNrsInt = parseInt(lastTwoNrs); //we make the nr an integer 
@@ -130,7 +130,7 @@ function millenialOrNot(nr, birthYear) {
         firstNineNrs += nr[i];
     }
 
-    //might not be the right calculation and maybe need full nr here dunno have to look into it!
+    //!!!!!!!!!!!!! needed to be % and you compare the leftover !!!!!
 
     var firstNineNrsInt = parseInt(firstNineNrs);
 
