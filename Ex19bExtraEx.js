@@ -130,6 +130,8 @@ function millenialOrNot(nr, birthYear) {
         firstNineNrs += nr[i];
     }
 
+    //might not be the right calculation and maybe need full nr here dunno have to look into it!
+
     var firstNineNrsInt = parseInt(firstNineNrs);
 
     if (nrDivByNinetyseven !== lastTwoNrsInt) {
@@ -142,9 +144,9 @@ function millenialOrNot(nr, birthYear) {
 function monthFullWritten(birthmonth, sexKnown) { //this turns the number indicating the month, into a fullout written month
     var monthInWord = "";
 
-    if (birthmonth > 12 && sexKnown === true) { //if month>12 and we know the gender then we need to -40 to find the month
+    if (birthmonth > 12 && sexKnown == true) { //if month>12 and we know the gender then we need to -40 to find the month
         birthmonth -= 40;
-    } else if (birthmonth > 12 && sexKnown === false) { //if month>12 and we don't know the gender we need to -20 to find the month
+    } else if (birthmonth > 12 && sexKnown == false) { //if month>12 and we don't know the gender we need to -20 to find the month
         birthmonth -= 20;
     }
 
