@@ -230,16 +230,48 @@ sample output
 
 swap your dads name with your moms.
 
+
 ## exercise 22
 
-Read the matrix of numbers stored in strArr which will be a 2D matrix that contains only the integers 1, 0, or 2. Then from the position in the matrix where a 1 is, return the number of spaces either left, right, down, or up you must move to reach an enemy which is represented by a 2. You are able to wrap around one side of the matrix to the other as well. For example: if strArr is ["0000", "1000", "0002", "0002"] then this looks like the following:
+read a matrix of numbers and store it in a multi dimmensional array. Make a function that will be able to find all positions of a certain number and displays that.
+
+### Sample input
 
 0 0 0 0
 1 0 0 0
 0 0 0 2
+0 0 0 3
+
+##  excercise 23
+
+Write a function that will calculate the distance between two points. (pythagoras is your friend)
+The input given is an x and a y coordinate
+
+## Excercise 24
+calculate the distance between two numbers in a multi dimmensional array. 
+write a function that will calculate the distance between two items in a multi dimensional array.
+every number should be present in the matrix once except of zero. These are blanks and doesn't need to be supported.
+
+### Sample input
+
+0 0 0 0
+1 0 0 0
+0 0 0 2
+0 0 0 3
+
+## excercise 25
+Calculate the distance between multiple points and return which point is the closest by
+
+### Sample input
+
+0 0 3 0
+1 0 0 0
+0 3 0 2
 0 0 0 2
 
-For this input your program should return 2 because the closest enemy (2) is 2 spaces away from the 1 by moving left to wrap to the other side and then moving down once. The array will contain any number of 0's and 2's, but only a single 1. It may not contain any 2's at all as well, where in that case your program should return a 0.
+## excercise 25b
+No need for new files here. :)
+Taking into account that you can only move vertical and horizontal display the route that one would need to travel to get from the one number to the other.
 
 ### Sample Test Cases
 
