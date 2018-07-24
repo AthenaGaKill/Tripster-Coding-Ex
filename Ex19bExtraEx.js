@@ -116,36 +116,49 @@ function millenialOrNot(nr, birthYear) {
 
 function monthFullWritten(birthmonth, sexKnown) { //this turns the number indicating the month, into a fullout written month
     var monthInWord = "";
-    var nettoMonth = 0;
-
+   
     if (birthmonth > 12 && sexKnown == true) { //if month>12 and we know the gender then we need to -40 to find the month
-        nettoMonth = birthmonth - 40;
+        birthmonth = birthmonth - 40;
     } else if (birthmonth > 12 && sexKnown == false) { //if month>12 and we don't know the gender we need to -20 to find the month
-        nettoMonth = birthmonth - 20;
+        birthmonth = birthmonth - 20;
     }
-
-    birthmonth = nettoMonth;
 
     switch (birthmonth) {
         case 01: monthInWord = "january";
             break;
+        case 1: monthInWord = "january";
+            break;
         case 02: monthInWord = "february";
+            break;
+        case 2: monthInWord = "february";
             break;
         case 03: monthInWord = "march";
             break;
+        case 3: monthInWord = "march";
+            break;
         case 04: monthInWord = "april";
+            break;
+        case 4: monthInWord = "april";
             break;
         case 05: monthInWord = "mai";
             break;
+        case 5: monthInWord = "mai";
+            break;
         case 06: monthInWord = "june";
+            break;
+        case 6: monthInWord = "june";
             break;
         case 07: monthInWord = "july";
             break;
-        case 08 : monthInWord = "august";
+        case 7: monthInWord = "july";
+            break;
+        case 08: monthInWord = "august";
             break;
         case 8: monthInWord = "august";
             break;
         case 09: monthInWord = "september";
+            break;
+        case 9: monthInWord = "september";
             break;
         case 10: monthInWord = "oktober";
             break;
