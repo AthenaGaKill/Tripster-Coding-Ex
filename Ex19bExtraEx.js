@@ -25,11 +25,11 @@ function main() {
     var monthOfBirth = month(input); //outputs 2nrs = month of birth
     var dayOfBirth = day(input); //outputs 2nrs = day of birth
     var isARefugee = refugee(dayOfBirth, monthOfBirth); //checks for refugees and gives back a true or false value
+    var sexOfTempWorkerKnown = sexOfTempWorkerCheck(monthOfBirth); //checks bisnr from temporary workers and gives back true if gender is know and false when it isnt
     var monthFullWord = monthFullWritten(monthOfBirth, sexOfTempWorkerKnown);
     var genderOfPerson = gender(input);
     var fullYear = millenialOrNot(input, YearOfBirth);
-    //checks bisnr from temporary workers and gives back true if gender is know and false when it isnt
-    var sexOfTempWorkerKnown = sexOfTempWorkerCheck(monthOfBirth);
+
     print(dayOfBirth, monthOfBirth, monthFullWord, YearOfBirth, fullYear, sexOfTempWorkerKnown, genderOfPerson, isARefugee);
 }
 
@@ -82,10 +82,13 @@ function sexOfTempWorkerCheck(birthmonth) { //temp workers get a bisnr. +20 when
     var minTwenty = birthmonth - 20; //birthmonth +20 when gender unknown
     var minForty = birthmonth - 40;//birthmonth +40 when gender known
 
-    if (minTwenty <= 12) { //if the birthmonth - 20 is smaller or = to 12 (12months in a year) = gender unknown
+    if (minTwenty > 0 && minTwenty <= 12) { //if the birthmonth - 20 is smaller or = to 12 (12months in a year) = gender unknown
         return false;
     }
-    if (minForty <= 12) { //if the bm -40 is smaller or = to 12 = gender known
+    if (minForty > 0 && minForty <= 12) { //if the bm -40 is smaller or = to 12 = gender known
+        return true;
+    }
+    if (birthmonth <= 12) { //normal situation so sex is know as well
         return true;
     }
 }
@@ -113,13 +116,16 @@ function millenialOrNot(nr, birthYear) {
 
 function monthFullWritten(birthmonth, sexKnown) { //this turns the number indicating the month, into a fullout written month
     var monthInWord = "";
-    
+    var nettoMonth = 0;
+
     if (birthmonth > 12 && sexKnown == true) { //if month>12 and we know the gender then we need to -40 to find the month
-        birtmonth = birthmonth - 40;
+        nettoMonth = birthmonth - 40;
     } else if (birthmonth > 12 && sexKnown == false) { //if month>12 and we don't know the gender we need to -20 to find the month
-        birthmonth = birthmonth - 20;
-    } 
-       
+        nettoMonth = birthmonth - 20;
+    }
+
+    birthmonth = nettoMonth;
+
     switch (birthmonth) {
         case 01: monthInWord = "january";
             break;
@@ -135,7 +141,9 @@ function monthFullWritten(birthmonth, sexKnown) { //this turns the number indica
             break;
         case 07: monthInWord = "july";
             break;
-        case 08: monthInWord = "august";
+        case 08 : monthInWord = "august";
+            break;
+        case 8: monthInWord = "august";
             break;
         case 09: monthInWord = "september";
             break;
@@ -145,10 +153,9 @@ function monthFullWritten(birthmonth, sexKnown) { //this turns the number indica
             break;
         case 12: monthInWord = "december";
             break;
-        default: monthInWord = " "
+        default: monthInWord = " 0 ";
     }
-    console.log("Month written out: " + monthInWord);
-    return monthInWord;    
+    return monthInWord;
 }
 
 function print(dayOfBirth, monthOfBirth, monthFullWord, YearOfBirth, fullYear, sexOfTempWorkerKnown, genderOfPerson, isARefugee) {
@@ -156,15 +163,14 @@ function print(dayOfBirth, monthOfBirth, monthFullWord, YearOfBirth, fullYear, s
     console.log("Month of birth: " + monthOfBirth);
     console.log("Day of birth: " + dayOfBirth);
     console.log("Is a refugee: " + isARefugee);
-    if (sexOfTempWorkerKnown === true)
+    if (sexOfTempWorkerKnown == true) {
         console.log("Sex: " + genderOfPerson);
-    else if (sexOfTempWorkerKnown === false) {
+    } else if (sexOfTempWorkerKnown == false) {
         console.log("Sex of the temporary worker is unknown");
     } else {
         console.log("Sex: " + genderOfPerson);
     }
     console.log("=> " + dayOfBirth + " " + monthFullWord + " " + fullYear);
-
 }
 
 main();
