@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        function main() {
+            var input = prompt("Enter the phonenumber you like to see converted to the international standard: ");
+            var inputArr = input.split(""); //nr is turned into an array so we can loop through it later on
+            var onlyNrLeft = deleteSeperators(inputArr); //all signs are deleted, only nrs are left
+            var startOfNrFixed = fixStartofNr(onlyNrLeft);
+            print(input, inputArr, onlyNrLeft, startOfNrFixed); //print function to print out the result
+        }
+
+        function print(input, inputArr, onlyNrLeft, startOfNrFixed) {
+            deleteSeperators(inputArr);
+            console.log("The number you gave in: " + input + "\n" + "That number standardised: " + startOfNrFixed);
+        }
+
+        function fixStartofNr(onlyNumbers) { //here we fix the first part of the input
+            if (onlyNumbers[0] != 0 && onlyNumbers[1] != 0 && onlyNumbers[0] != "+") {
+                onlyNumbers.unshift("+32");
+            } else if (onlyNumbers[0] == 0 && onlyNumbers[1] == 0) { //we replace the "00" with a "+""
+                onlyNumbers.splice(0, 2); //we remove the zeroes
+                onlyNumbers.unshift("+"); //add "+" to the start
+            } else if (onlyNumbers[1] == 0 && onlyNumbers[2] == 0) { //if input is (00) we also remove the "00" and replace it with "+"
+                onlyNumbers.splice(1, 2);
+                onlyNumbers.unshift("+");
+            }
+            Result = onlyNumbers.join(""); //we turn the array back into a string
+            return Result; //return the result
+        }
+
+        function deleteSeperators(phoneNrArray) { //first we remove all the elements we don't need out of the nr
+            var onlyNrs = []; //array to add the ok input to
+            for (var i = 0; i < phoneNrArray.length; i++) {
+                switch (phoneNrArray[i]) { //we check the array input element per element and delete the ones we don't want
+                    case ".": phoneNrArray.splice(i, 0); break;
+                    case "/": phoneNrArray.splice(i, 0); break;
+                    case "(": phoneNrArray.splice(i, 0); break;
+                    case ")": phoneNrArray.splice(i, 0); break;
+                    case "-": phoneNrArray.splice(i, 0); break;
+                    case " ": phoneNrArray.splice(i, 0); break;
+                    default: onlyNrs[i] = phoneNrArray[i];
+                }
+            } return onlyNrs;
+        }
+
+        main();
+
+
+        //HAD EERST IN APARTE FUNCTIONS GESCHREVEN... IS GEWOON TER INFO :)
+        //THIS IN MAIN FUNCTION:
+        // var replaceZeroes = replaceZeroesWithPlus(onlyNrLeft); //2 zeroes in front are replaced by a "+"
+        // console.log(replaceZeroes);
+        // var belgianNr = noCountryCodeGiven(onlyNrLeft);
+        // console.log(belgianNr);
+
+        // function noCountryCodeGiven(onlyNumbers) {
+        //     if (onlyNumbers[0] != 0 && onlyNumbers[1] != 0 && onlyNumbers[0] != "+") {
+        //         onlyNumbers.unshift("+32");
+        //     }
+        //     return onlyNumbers;
+        // }
+
+        // function replaceZeroesWithPlus(onlyNumbers) { //check if there are 2 zeroes at the start and replace them by a + if that's the case
+        //     if (onlyNumbers[0] == 0 && onlyNumbers[1] == 0) {
+        //         onlyNumbers.splice(0, 2);
+        //         onlyNumbers.unshift("+");
+        //     }
+        //     return onlyNumbers;
+        // }
+    </script>
+
+</body>
+
+</html>
