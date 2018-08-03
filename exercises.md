@@ -220,20 +220,21 @@ some sample inputs:
 +1-541-754-3010
 (541) 754-3010
 001-541-754-3010
-1-541-754-3010
 
 sample output
 +32470452233
 +3215516754
 
+
 #excercise 21
 
 swap your dads name with your moms.
 
-
 ## exercise 22
 
-read a matrix of numbers and store it in a multi dimmensional array. Make a function that will be able to find all positions of a certain number and displays that.
+[[0, 0, 0, 0], [1, 0, 0, 0], [0, 0, 0, 2], [0, 0, 0, 2]]
+read a matrix of numbers and store it in a multi dimmensional array.
+Make a function that will be able to find all positions of a certain number and displays that.
 
 ### Sample input
 
@@ -242,12 +243,13 @@ read a matrix of numbers and store it in a multi dimmensional array. Make a func
 0 0 0 2
 0 0 0 3
 
-##  excercise 23
+## excercise 23
 
 Write a function that will calculate the distance between two points. (pythagoras is your friend)
 The input given is an x and a y coordinate
 
 ## Excercise 24
+
 calculate the distance between two numbers in a multi dimmensional array. 
 write a function that will calculate the distance between two items in a multi dimensional array.
 every number should be present in the matrix once except of zero. These are blanks and doesn't need to be supported.
