@@ -8,6 +8,25 @@ function main() {
 
     var multiArrayInput = createMultiArray(input);
     console.log(multiArrayInput);
+
+    var pickANr = prompt("Which nr do you wish to find the positions of?");
+    var position = findPosition(pickANr, multiArrayInput);
+    console.log(position);
+}
+
+function findPosition(pickedNr, multiArrInput) {
+    var positions = [];
+    for (var i = 0; i < 4; i++) { //loop for the rows     
+        positions[i] = [];
+        for (var j = 0; j < 4; j++) { //loop for the colums
+            if (multiArrInput[i][j] == pickedNr) {
+                // positions += multiArrInput[i][j].indexOf(pickedNr);
+                positions[positions.length] = multiArrInput[i][j];
+                console.log((multiArrInput[i][j]));
+            }
+        }
+    } console.log(positions);
+    return positions;
 }
 
 function createMultiArray(inputNr) { //we turn the input row of nrs into a multidimensional array
