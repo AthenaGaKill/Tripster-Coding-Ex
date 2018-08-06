@@ -2,7 +2,10 @@
 //make a function that can find all positions of a certain nr + display it
 
 function main() {
-    var input = prompt("Give in your 16nrs to have them converted into a multidimensional array:");
+    do {
+        var input = prompt("Give in your 16nrs to have them converted into a multidimensional array:");
+    } while (input.length != 16);
+
     var multiArrayInput = createMultiArray(input);
     console.log(multiArrayInput);
 }
