@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //calculate the distance between two numbers in a multi dimmensional array. 
+        //write a function that will calculate the distance between two items in a multi dimensional array. 
+        //every number should be present in the matrix once except of zero. These are blanks and doesn't need to be supported.
+        function main() {
+            var input = prompt("Give in a multidimensional array: ");
+            // var inputX = prompt("Chose your X coordinate out of that array: ");
+            // var inputY = prompt("Chose your Y coordinate out of that array: ");
+            var nrsIndex = getNrsIndex(input);
+
+//=====> NOT SURE IF I HAVE TO LOOP THROUGH ALL THE NRS AND LOOK FOR NRS OTHER THAN 0 OR 
+//HAVE THE PERSON CHOSE 2 AND THEN CALCULATE THE DISTANCE... HALP!
+        }
+
+        function getNrsIndex(inputArr) {
+            var n = 0;
+            var index = [];
+            for (var i = 0; i < input.length; i++) {
+                index[i] = [];
+                for (var j = 0; i < input.length; i++) {//we need to go through the array and look for elements != 0
+                    if (input[i][j] != 0) { //if the input != 0 we need to store the index of that variable somewhere
+                    index[0][n] = input[i][j]; //we store the values in here
+                    n++;
+                    }
+                }
+            }console.log(index);
+            return index;
+            
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>
