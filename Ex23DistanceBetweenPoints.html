@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //Write a function that will calculate the distance between two points.
+        //(pythagoras is your friend) The input given is an x and an y coordinate
+
+        function main() {//first we ask for the coordinates
+            var inputX = prompt("Give in the X coordinate: ");
+            var inputY = prompt("Give in the Y coordinate: ");
+            var pythagorasResult = pythagorasOfXAndY(inputX, inputY);
+        }
+
+        function pythagorasOfXAndY(X, Y) { //
+            var Z = Math.sqrt((Math.pow(X, 2) + Math.pow(Y, 2))); //x2 + y2 = z2
+            console.log("The distance between X and Y is: " + Z);
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>
