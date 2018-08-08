@@ -10,30 +10,57 @@
         //calculate the distance between two numbers in a multi dimmensional array. 
         //write a function that will calculate the distance between two items in a multi dimensional array. 
         //every number should be present in the matrix once except of zero. These are blanks and doesn't need to be supported.
+        //ex input 0000100000020003
+
         function main() {
             var input = prompt("Give in a multidimensional array: ");
-            // var inputX = prompt("Chose your X coordinate out of that array: ");
-            // var inputY = prompt("Chose your Y coordinate out of that array: ");
-            var nrsIndex = getNrsIndex(input);
-
-//=====> NOT SURE IF I HAVE TO LOOP THROUGH ALL THE NRS AND LOOK FOR NRS OTHER THAN 0 OR 
-//HAVE THE PERSON CHOSE 2 AND THEN CALCULATE THE DISTANCE... HALP!
+            var inputMDArr = createMultiArray(input);
+            console.log(inputMDArr);
+            var nrsIndex = getNrsIndex(inputMDArr);
         }
 
+        function pytagoras(index) { //dunno how to do pythagoras for multi d array :(
+            var result = ;
+            return result;
+        }
         function getNrsIndex(inputArr) {
-            var n = 0;
-            var index = [];
-            for (var i = 0; i < input.length; i++) {
-                index[i] = [];
-                for (var j = 0; i < input.length; i++) {//we need to go through the array and look for elements != 0
-                    if (input[i][j] != 0) { //if the input != 0 we need to store the index of that variable somewhere
-                    index[0][n] = input[i][j]; //we store the values in here
-                    n++;
+            var one; //nr 1 index
+            var two; //nr 2 index
+            var three; //nr3 index
+
+            for (var i = 0; i < inputArr.length; i++) {
+                for (var j = 0; j < inputArr.length; j++) {//we need to go through the array and look for elements != 0
+                    if (inputArr[i][j] == 1) { //1 = the index we will be comparing to
+                        one = Number[i, j]; //we put the index of nr 1 in this var 
+                        console.log(one);
+                    }
+                    if (inputArr[i][j] == 2) { //2 = the index we will compare 1 to
+                        two = Number[i, j]; //we put the index of nr 2 in this var 
+                        console.log(two);
+                    }
+                    if (inputArr[i][j] == 3) { //3 = the index we will compare 1 to
+                        three = Number[i, j]; //we put the index of nr 2 in this var 
+                        console.log(three);
                     }
                 }
-            }console.log(index);
+            }
+            console.log(resultOneTwo);
+        }
+
+        function createMultiArray(input) {
+            var index = [];
+            var row = 4;
+            var cols = 4;
+            var n = 0;
+
+            for (var i = 0; i < row; i++) {
+                index[i] = [];
+                for (var j = 0; j < cols; j++) {
+                    index[i][j] = input[n]; //DONT FORGET INPUT[N] TO LOOP THROUGH ALL NRS!!!!
+                    n++;
+                }
+            }
             return index;
-            
         }
 
         main();
