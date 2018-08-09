@@ -11,14 +11,19 @@
         //(pythagoras is your friend) The input given is an x and an y coordinate
 
         function main() {//first we ask for the coordinates
-            var inputX = prompt("Give in the X coordinate: ");
-            var inputY = prompt("Give in the Y coordinate: ");
-            var pythagorasResult = pythagorasOfXAndY(inputX, inputY);
+            let inputOneXY = prompt("Give in the 1st point's location as an array: ");
+            let inputOneXYNr = Number(inputOneXY);
+            let inputTwoXY = prompt("Give in the 2nd point's location as an array: ");
+            let inputTwoXYNr = Number(inputTwoXY);
+            let pythagorasResult = pythagorasOfXAndY(inputOneXYNr, inputTwoXYNr);
+            console.log(pythagorasResult);
+
         }
 
-        function pythagorasOfXAndY(X, Y) { //
-            var Z = Math.sqrt((Math.pow(X, 2) + Math.pow(Y, 2))); //x2 + y2 = z2
-            console.log("The distance between X and Y is: " + Z);
+
+        function pythagorasOfXAndY(oneXY, twoXY) { //
+            let difference = (Math.sqrt(Math.pow(oneXY[0] - twoXY[0])) + (Math.pow(oneXY[1] - twoXY[1])));
+            return difference;
         }
 
         main();
