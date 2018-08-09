@@ -11,18 +11,19 @@
         //(pythagoras is your friend) The input given is an x and an y coordinate
 
         function main() {//first we ask for the coordinates
-            let inputOneXY = prompt("Give in the 1st point's location as an array: ");
-            let inputOneXYNr = Number(inputOneXY);
-            let inputTwoXY = prompt("Give in the 2nd point's location as an array: ");
-            let inputTwoXYNr = Number(inputTwoXY);
-            let pythagorasResult = pythagorasOfXAndY(inputOneXYNr, inputTwoXYNr);
+            //didn't know how to do it with a direct [X,Y] input as it is seen as a string and using Number didnt fix it...
+            let inputOneX = parseInt(prompt("Give in the 1st point's X location: "), 10);
+            let inputOneY = parseInt(prompt("Give in the 1st point's Y location: "), 10);
+            let inputTwoX = parseInt(prompt("Give in the 2nd point's X location: "), 10);
+            let inputTwoY = parseInt(prompt("Give in the 2nd point's Y location: "), 10);
+            let pythagorasResult = pythagorasOfXAndY(inputOneX, inputOneY, inputTwoX, inputTwoY);
             console.log(pythagorasResult);
 
         }
 
 
-        function pythagorasOfXAndY(oneXY, twoXY) { //
-            let difference = (Math.sqrt(Math.pow(oneXY[0] - twoXY[0])) + (Math.pow(oneXY[1] - twoXY[1])));
+        function pythagorasOfXAndY(oneX, oneY, twoX, twoY) {
+            let difference = (Math.sqrt(Math.pow(oneX - twoX)) + (Math.pow(oneY - twoY)));
             return difference;
         }
 
