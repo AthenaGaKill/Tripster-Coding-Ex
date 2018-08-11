@@ -17,8 +17,9 @@ function findPosition(pickedNr, multiArrInput) {
     //we need to check each element and compare it to the nr we are looking for
     for (var i = 0; i < 4; i++) { //loop for the rows
         for (var j = 0; j < 4; j++) { //loop for the colums
-            if (multiArrInput[i][j] == pickedNr) {  //if it is the same we need to write down the index               
-                console.log("Your picked nr can be found at the following index: " + i + " " + j);
+            if (multiArrInput[i][j] == pickedNr) {  //if it is the same we need to write down the index 
+                console.log("Tis is ze index brah: " + [i,j]);                            
+                return [i,j];
             }
         }
     }
