@@ -12,16 +12,21 @@
 
         function main() {//first we ask for the XY coordinates
             //didn't know how to do it with a direct [X,Y] input as it is seen as a string and using Number didnt fix it...
-            let inputOneX = Number(prompt("Give in the 1st point's X location: "));
-            let inputOneY = Number(prompt("Give in the 1st point's Y location: "));
-            let inputTwoX = Number(prompt("Give in the 2nd point's X location: "));
-            let inputTwoY = Number(prompt("Give in the 2nd point's Y location: "));
-            let pythagorasResult = pythagorasOfXAndY(inputOneX, inputOneY, inputTwoX, inputTwoY);
+            let pointOne=[];
+            let pointTwo=[];
+            pointOne[0] = Number(prompt("Give in the 1st point's X location: "));
+            pointOne[1] = Number(prompt("Give in the 1st point's Y location: "));
+            pointTwo[0] = Number(prompt("Give in the 2nd point's X location: "));
+            pointTwo[1] = Number(prompt("Give in the 2nd point's Y location: "));
+            // let pythagorasResult = pythagorasOfXAndY(inputOneX, inputOneY, inputTwoX, inputTwoY);
+            let pythagorasResult = pythagorasOfTwoPoints(pointOne,pointTwo);
             console.log("your foeking pythagoras shiet result: " + pythagorasResult);
-
         }
 
-
+        function pythagorasOfTwoPoints(pointOne,pointTwo){
+            return pythagorasOfXAndY(pointOne[0],pointOne[1],pointTwo[0],pointTwo[1]);
+        }
+        
         function pythagorasOfXAndY(oneX, oneY, twoX, twoY) {
             let result = Math.sqrt(Math.pow(oneX - twoX, 2) + Math.pow(oneY - twoY, 2)); //we calculate the distance between the 2 points
             return result;
