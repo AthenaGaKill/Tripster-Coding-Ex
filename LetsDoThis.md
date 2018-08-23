@@ -282,3 +282,36 @@ Taking into account that you can only move vertical and horizontal display the r
 
 - Input:"0000", "2010", "0000", "2002"
 - Output:2
+
+## excercise 26
+
+Suppose indices represent people and that the value at row i, column j of a 2D array is true just 
+in case i and j are friends and false otherwise. Use initializer  list to instatiate and initialize your 
+array to represent the following configuration:
+
+```javascript
+# | 0 1 2 3 4
+--+--------------- (*means friends)
+0 | * *  *
+1 | * *     *
+2 | *
+3 | *   *
+4 | *    * *
+```
+
+- Write some code to count how many pairs of friends are represented in the array. Note that each friendship pair appears twice in the array, so in the example above there are 6 pairs of friends).
+- Write a method to check whether two people have a common friend. For example, in the example above, 0 and 4 are both friends with 3 (so they have a common friend), whereas 1 and 2 have no common friends. The method should have three parameters: a 2D array of boolean representing the friendship relationships and two integers i, j. The method should return true if there is an k such that i is a friend of k and k is a friend of j and return false otherwise. Make this method and test it from the main() method.
+
+## excercise 27
+
+As discussed during last session there is  a clear distinction between var and let wich might create loads of error in previously written code because of scoping and what not. Now revisit following sources:
+
+- Ex5Fibonacci2.html
+- Ex10SumForLoop.html
+
+## excercise 28
+
+read a multi number array. Then calculate the sum of the rows and the columns. Add these as extra cells to the array.
+note that
+numbers will be , separated
+rows will be ; separated
