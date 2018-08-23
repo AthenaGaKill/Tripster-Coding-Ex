@@ -261,57 +261,23 @@ every number should be present in the matrix once except of zero. These are blan
 0 0 0 2
 0 0 0 3
 
-## excercise 25
-Calculate the distance between multiple points and return which point is the closest by
-
-### Sample input
-
-0 0 3 0
-1 0 0 0
-0 3 0 2
-0 0 0 2
-
-## excercise 25b
-No need for new files here. :)
-Taking into account that you can only move vertical and horizontal display the route that one would need to travel to get from the one number to the other.
-
-### Sample Test Cases
-
-- Input:"000", "100", "200"
-- Output:1
-
-- Input:"0000", "2010", "0000", "2002"
-- Output:2
-
 ## excercise 26
-
-Suppose indices represent people and that the value at row i, column j of a 2D array is true just 
-in case i and j are friends and false otherwise. Use initializer  list to instatiate and initialize your 
-array to represent the following configuration:
-
-```javascript
-# | 0 1 2 3 4
---+--------------- (*means friends)
-0 | * *  *
-1 | * *     *
-2 | *
-3 | *   *
-4 | *    * *
-```
-
-- Write some code to count how many pairs of friends are represented in the array. Note that each friendship pair appears twice in the array, so in the example above there are 6 pairs of friends).
-- Write a method to check whether two people have a common friend. For example, in the example above, 0 and 4 are both friends with 3 (so they have a common friend), whereas 1 and 2 have no common friends. The method should have three parameters: a 2D array of boolean representing the friendship relationships and two integers i, j. The method should return true if there is an k such that i is a friend of k and k is a friend of j and return false otherwise. Make this method and test it from the main() method.
-
-## excercise 27
 
 As discussed during last session there is  a clear distinction between var and let wich might create loads of error in previously written code because of scoping and what not. Now revisit following sources:
 
 - Ex5Fibonacci2.html
 - Ex10SumForLoop.html
 
-## excercise 28
+## excercise 27
 
 read a multi number array. Then calculate the sum of the rows and the columns. Add these as extra cells to the array.
 note that
 numbers will be , separated
 rows will be ; separated
+
+
+10,11,12,13;sum(row1)
+12,27,34,25;sum(row2)
+15,16,34,78;sum(row3)
+456,453,156,564;sum(row4)
+sum(col1),sum(col2),sum(col3),sum(col4);
