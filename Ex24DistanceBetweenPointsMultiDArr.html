@@ -12,58 +12,73 @@
         //every number should be present in the matrix once except of zero. These are blanks and doesn't need to be supported.
         //ex input 0000100000020003
 
-        function main() {
-            var input = prompt("Give in a multidimensional array: ");
-            var inputMDArr = createMultiArray(input);
-            console.log(inputMDArr);
-            var nrsIndex = getNrsIndex(inputMDArr);
+        main();
+
+        function main() { //let main = () => {
+            let input;
+            do {
+                input = prompt("Give in your 16 digit number:");
+            } while (input.length != 16);
+
+            let inputArr = input.split(""); //turn it into an array
+            console.log(inputArr);
+
+            let multiArray = multiArrayInput(inputArr); //function to turn the normal input into a multiarray
+            console.log(multiArray);
+
+            let indexOne = findIndexOne(multiArray); //we get the index of the first nr
+            console.log(`Index of 1: ${indexOne}`);
+
+            let choseNr = prompt("From which nr do you wish to know the distance from 1?"); //nr to calculate the distance from
+
+            let indexOther = indexOtherNr(multiArray, choseNr); //we get the index of the nr
+            console.log(`Index of chosen nr: ${indexOther}`);
+
+            let distance = calculateDistanceNrs(indexOne, indexOther); //we need the pythagoras for this
+            console.log(`The distance between 1 and ${choseNr} : ${distance}`);
         }
 
-        function pytagoras(index) { //dunno how to do pythagoras for multi d array :(
-            var result = ;
+        function calculateDistanceNrs(indexOne, indexOther) { //pytagoras: a2 + b2 = c2 => c = wortel van a2 + b2
+            //we calculate the distance between the 2 points
+            let result = Math.sqrt(Math.pow(indexOne[0] - indexOther[0], 2) + Math.pow(indexOne[1] - indexOther[1], 2)); //math.sqrt = root, math.pow(nr,which pow) = macht
             return result;
         }
-        function getNrsIndex(inputArr) {
-            var one; //nr 1 index
-            var two; //nr 2 index
-            var three; //nr3 index
 
-            for (var i = 0; i < inputArr.length; i++) {
-                for (var j = 0; j < inputArr.length; j++) {//we need to go through the array and look for elements != 0
-                    if (inputArr[i][j] == 1) { //1 = the index we will be comparing to
-                        one = Number[i, j]; //we put the index of nr 1 in this var 
-                        console.log(one);
-                    }
-                    if (inputArr[i][j] == 2) { //2 = the index we will compare 1 to
-                        two = Number[i, j]; //we put the index of nr 2 in this var 
-                        console.log(two);
-                    }
-                    if (inputArr[i][j] == 3) { //3 = the index we will compare 1 to
-                        three = Number[i, j]; //we put the index of nr 2 in this var 
-                        console.log(three);
+        function indexOtherNr(multiArray, choseNr) {
+            for (var i = 0; i < 4; i++) { //loop for the rows
+                for (var j = 0; j < 4; j++) { //loop for the colums
+                    if (multiArray[i][j] == choseNr) {  //we need the index of nr one 
+                        return [i, j];
                     }
                 }
             }
-            console.log(resultOneTwo);
         }
 
-        function createMultiArray(input) {
-            var index = [];
-            var row = 4;
-            var cols = 4;
-            var n = 0;
-
-            for (var i = 0; i < row; i++) {
-                index[i] = [];
-                for (var j = 0; j < cols; j++) {
-                    index[i][j] = input[n]; //DONT FORGET INPUT[N] TO LOOP THROUGH ALL NRS!!!!
-                    n++;
+        function findIndexOne(multiArray) {
+            for (var i = 0; i < 4; i++) { //loop for the rows
+                for (var j = 0; j < 4; j++) { //loop for the colums
+                    if (multiArray[i][j] == "1") {  //we need the index of nr one 
+                        return [i, j];
+                    }
                 }
             }
-            return index;
         }
 
-        main();
+        function multiArrayInput(inputArr) { //we turn the input into a multi d array
+            let multiArr = []; //empty array to put the values in
+            let rows = 4; //we need both 4 horizontal as 4 vertical rows. it is easier to adjust when we use a predef var.
+            let n = 0; //we use this to increment in the loop to 16 so we can also loop through inputArr
+            for (let i = 0; i < rows; i++) { //loop through horizontal rows
+                multiArr[i] = []; //every index contains another array. we define the multi d array here
+                for (let j = 0; j < rows; j++) { //loop through vertical rows
+                    multiArr[i][j] = inputArr[n]; //we put the value of inputArr[n] into a multi d array 
+                    n++; //we increment this so the next value can be put in the multi d array
+                }
+            }
+            return multiArr;
+        }
+
+
 
     </script>
 </body>
