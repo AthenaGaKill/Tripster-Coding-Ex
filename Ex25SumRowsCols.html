@@ -16,7 +16,7 @@
             let sumRows = sumOfRows(input);
             console.log(`The sum of the rows is: ${sumRows[0]} and ${sumRows[1]}`);
             let sumCols = sumOfCols(input);
-
+            console.log(`The sum of the columns is: ${sumCols[0]}, ${sumCols[1]}, ${sumCols[2]}, ${sumCols[3]} and ${sumCols[4]}`);
         }
 
 
@@ -38,7 +38,6 @@
             for (let i = 0; i < rows; i++) {
                 for (let j = 0; j < cols; j++) {
                     sum2 += input[i][j];
-                    console.log(sum2);
                 }
                 allSums.push(sum2);
                 sum2 = 0;
@@ -47,8 +46,20 @@
         }
 
         function sumOfCols(input) {
-            //prints out the sum of the rows
+            let rows = 2;
+            let cols = 5;
+            let sum = 0;
+            let allSumsCols = [];
 
+            //prints out the sum of the rows
+            for (let j = 0; j < cols; j++) {
+                for (let i = 0; i < rows; i++) {
+                    sum += input[i][j];
+                }
+                allSumsCols.push(sum);
+                sum = 0;
+            }
+            return allSumsCols;
         }
 
     </script>
