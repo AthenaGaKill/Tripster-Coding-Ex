@@ -1,0 +1,68 @@
+<!-- 12,13,14,15,16; =som eerste rij 13,14,15,16,17; = som tweede rij 14,15,16,17,18; 14,15,16,17,18; ... =som van de eerste kollom,
+=som van de tweede kollom -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        main();
+        function main() {
+            let input = [[12, 13, 14, 15, 16], [13, 14, 15, 16, 17]];
+            let sumRows = sumOfRows(input);
+            console.log(`The sum of the rows is: ${sumRows[0]} and ${sumRows[1]}`);
+            let sumCols = sumOfCols(input);
+            console.log(`The sum of the columns is: ${sumCols[0]}, ${sumCols[1]}, ${sumCols[2]}, ${sumCols[3]} and ${sumCols[4]}`);
+        }
+
+
+        function sumOfRows(input) {
+            let rows = 2;
+            let cols = 5;
+            let sum = 0;
+            let sum2 = 0;
+            let allSums = [];
+
+            //prints out the sum of all nrs
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    sum += input[i][j];
+                }
+            }
+
+            //prints out the sum of the rows
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    sum2 += input[i][j];
+                }
+                allSums.push(sum2);
+                sum2 = 0;
+            }
+            return allSums;
+        }
+
+        function sumOfCols(input) {
+            let rows = 2;
+            let cols = 5;
+            let sum = 0;
+            let allSumsCols = [];
+
+            //prints out the sum of the rows
+            for (let j = 0; j < cols; j++) {
+                for (let i = 0; i < rows; i++) {
+                    sum += input[i][j];
+                }
+                allSumsCols.push(sum);
+                sum = 0;
+            }
+            return allSumsCols;
+        }
+
+    </script>
+</body>
+
+</html>
