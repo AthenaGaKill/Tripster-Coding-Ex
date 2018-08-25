@@ -15,19 +15,19 @@
 
         main();
         function main() {
-            //prompt asking to create a book, delete a book, locate a book
-            let choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book.");
-
-            switch (choose) {
-                case "1": let create = createBook();
-                    break;
-
-                default: console.log("Pick one of the options plz. 1 = create book, 2 = delete book, 3 = locate book");
-
-                    break;
-            }
-            //we need an array to keep all the books with index
-            let books = [];
+            let choose; //needs to be defined outside loop
+            let books = []; //we need an array to keep all the books indexed
+            do {
+                //prompt asking to create a book, delete a book, locate a book
+                choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book, 0 to exit program.");
+                if (choose == "1") {
+                    let bookCreated = createBook();
+                    books.push(bookCreated);
+                    console.log(books);
+                }
+            } while (choose != 0);
+            console.log(books);
+            
         }
 
         function createBook() {
