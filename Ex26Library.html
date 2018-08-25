@@ -7,30 +7,35 @@
 
 <body>
     <script>
-        //we need:
-
-        //depending what option we have a function containing other functions
-        //we turn the input into an object
-        //put the object into an array
-
         main();
         function main() {
             let choose; //needs to be defined outside loop
             let books = []; //we need an array to keep all the books indexed
-            do {
+            let index = 0;
+            do { //loop until 0 to exit program
                 //prompt asking to create a book, delete a book, locate a book
                 choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book, 0 to exit program.");
                 if (choose == "1") {
-                    let bookCreated = createBook();
-                    books.push(bookCreated);
+                    let bookCreation = createBook(index);
+                    books.push(bookCreation); //we add the object to an array
+                    index++;
+                    console.log(books);
+                } else if (choose == "2") {
+                    let deleteIndex = deleteBook(index);
+                    books.splice(deleteIndex, 1);
                     console.log(books);
                 }
             } while (choose != 0);
             console.log(books);
-            
+
         }
 
-        function createBook() {
+        function deleteBook(index) {
+            let deleteIndex = prompt("Give the index of the book you wish to delete.");
+            return Number(deleteIndex);
+        }
+
+        function createBook(index) {
             //we need: title, author, genre, year of publication, location
             let book = {};
             let title = prompt("Give the title of the book:");
@@ -39,6 +44,7 @@
             let yearPublication = prompt("Give the year of publication of the book:");
             let location = prompt("Give the location of the book:");
             //we turn the info into an object
+            book.index = index;
             book.title = title;
             book.author = author;
             book.genre = genre;
@@ -47,6 +53,7 @@
             console.log(book);
             return book;
         }
+
     </script>
 
 </body>
