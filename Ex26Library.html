@@ -15,19 +15,30 @@
             do { //loop until 0 to exit program
                 //prompt asking to create a book, delete a book, locate a book
                 choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book, 0 to exit program.");
-                if (choose == "1") {
+                if (choose == "1") { //choose 1 we create a book
                     let bookCreation = createBook(index);
                     books.push(bookCreation); //we add the object to an array
-                    index++;
+                    index++; //increment the index to make it ready for the next book to be add
                     console.log(books);
-                } else if (choose == "2") {
+                } else if (choose == "2") { //choose 2 we delete a book
                     let deleteIndex = deleteBook(index);
-                    books.splice(deleteIndex, 1);
+                    books.splice(deleteIndex, 1); //we delete the selected element
                     console.log(books);
+                } else if (choose == "3") { //choose 3 to find a book
+                    bookLocation = locateBook(books);
+                    console.log(`The location of the book you are looking for is: ${bookLocation}`);
                 }
             } while (choose != 0);
             console.log(books);
+        }
 
+        function locateBook(books) {
+            let bookTitle = prompt("Give the title in of the book you wish to locate:");
+            for (let i = 0; i < books.length; i++) { //we loop through the books and see if we find the requested book
+                if (bookTitle == books[i].title) {
+                    return books[i].location; //if we do we return the location of the book
+                }
+            }
         }
 
         function deleteBook(index) {
@@ -37,13 +48,14 @@
 
         function createBook(index) {
             //we need: title, author, genre, year of publication, location
-            let book = {};
+            let book = {}; //empty object to add the created books to 
             let title = prompt("Give the title of the book:");
             let author = prompt("Give the Author of the book:");
             let genre = prompt("Give the genre of the book:");
             let yearPublication = prompt("Give the year of publication of the book:");
             let location = prompt("Give the location of the book:");
-            //we turn the info into an object
+
+            //we add the info to the book object
             book.index = index;
             book.title = title;
             book.author = author;
@@ -51,7 +63,7 @@
             book.yearOfPublication = yearPublication;
             book.location = location;
             console.log(book);
-            return book;
+            return book; //we return the new book object so we can add this to an array and index it 
         }
 
     </script>
