@@ -280,3 +280,23 @@ rows will be ; separated
 15,16,34,78;sum(row3)
 456,453,156,564;sum(row4)
 sum(col1),sum(col2),sum(col3),sum(col4);
+
+## excercise 28
+
+You're no longer limited to technologies. So fronted wise it is your call.
+
+make a library application. Someone using it should be able to:
+- add books
+    - book title
+    - book author
+    - year of publication
+    - genre
+- remove books
+- say where the books are located
+- look for books on one of the following types
+    - title
+    - author
+    - genre
+    - year of publication
+    - location
+
