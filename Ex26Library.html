@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //we need:
+
+        //depending what option we have a function containing other functions
+        //we turn the input into an object
+        //put the object into an array
+
+        main();
+        function main() {
+            //prompt asking to create a book, delete a book, locate a book
+            let choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book.");
+
+            switch (choose) {
+                case "1": let create = createBook();
+                    break;
+
+                default: console.log("Pick one of the options plz. 1 = create book, 2 = delete book, 3 = locate book");
+
+                    break;
+            }
+            //we need an array to keep all the books with index
+            let books = [];
+        }
+
+        function createBook() {
+            //we need: title, author, genre, year of publication, location
+            let book = {};
+            let title = prompt("Give the title of the book:");
+            let author = prompt("Give the Author of the book:");
+            let genre = prompt("Give the genre of the book:");
+            let yearPublication = prompt("Give the year of publication of the book:");
+            let location = prompt("Give the location of the book:");
+            //we turn the info into an object
+            book.title = title;
+            book.author = author;
+            book.genre = genre;
+            book.yearOfPublication = yearPublication;
+            book.location = location;
+            console.log(book);
+            return book;
+        }
+    </script>
+
+</body>
+
+</html>
