@@ -14,7 +14,7 @@
             let index = 0;
             do { //loop until 0 to exit program
                 //prompt asking to create a book, delete a book, locate a book
-                choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book, 0 to exit program.");
+                choose = prompt("What do you want to do? Type 1 to create a book, 2 to delete a book, 3 to locate a book, 4 to get info of a book, 0 to exit program.");
                 if (choose == "1") { //choose 1 we create a book
                     let bookCreation = createBook(index);
                     books.push(bookCreation); //we add the object to an array
@@ -25,11 +25,25 @@
                     books.splice(deleteIndex, 1); //we delete the selected element
                     console.log(books);
                 } else if (choose == "3") { //choose 3 to find a book
-                    bookLocation = locateBook(books);
+                    let bookLocation = locateBook(books);
                     console.log(`The location of the book you are looking for is: ${bookLocation}`);
+                } else if (choose == "4") { //choose 4 to get all info of a book
+                    let bookInfo = findBookByTitle(books);
+                    for (let key in bookInfo) { //we need the key-value overview so we need the for in for this
+                        console.log(`${key} : ${bookInfo[key]}`); //we print the info of the book out in a nice overview
+                    }
                 }
             } while (choose != 0);
             console.log(books);
+        }
+
+        function findBookByTitle(books) {
+            let bookTitle = prompt("Give the title in of the book you wish to get all info of:");
+            for (let i = 0; i < books.length; i++) { //we loop through the books and see if we find the requested book
+                if (bookTitle == books[i].title) {
+                    return books[i]; //if we do we return all the info of the book
+                }
+            }
         }
 
         function locateBook(books) {
@@ -65,7 +79,6 @@
             console.log(book);
             return book; //we return the new book object so we can add this to an array and index it 
         }
-
     </script>
 
 </body>
