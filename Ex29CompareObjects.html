@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //compare two objects to determine if the first one contains equivalent property values to the second one 
+
+        let main = () => {
+            const objectOne = {
+                name: "Athena",
+                age: "1337",
+                colorHair: "brown"
+            };
+
+            const objectTwo = {
+                name: "Athene",
+                age: "5555",
+                colorHair: "brown"
+            }
+
+            // check if there are key value pairs that are the same accross both objects 
+            let crossCheckObjects = checkObjects(objectOne, objectTwo);
+        }
+
+        let checkObjects = (objectOne, objectTwo) => {
+            for (let propsOne in objectOne) {
+                for (let propsTwo in objectTwo) {
+                    if ((propsOne == propsTwo) && (objectOne[propsOne] == objectTwo[propsTwo])) {
+                        console.log(`These 2 value pairs overlap in both objects: ${propsOne} is ${objectOne[propsOne]}`);
+                    }
+                }
+            }
+        }
+        main();
+    </script>
+</body>
+
+</html>
