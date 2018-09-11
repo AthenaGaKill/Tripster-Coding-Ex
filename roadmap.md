@@ -23,3 +23,5 @@
     - observer pattern
     - inhheritance and polymorph
 - State container
+
+
