@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body onload="documentLoaded()">
+    <div>
+        <p>Voornaam:<input id="voornaam" type="text"/></p>
+        <p>Achternaam:<input id="achternaam" type="text"/></p>
+        <p>Straatnaam:<input id="straatnaam" type="text"/></p>
+        <p>Nummer:<input id="nummer" type="text"/></p>
+        <p>Postcode:<input id="postcode" type="text"/></p>
+        <p>Gemeente:<input id="gemeente" type="text"/></p>
+        <button id="Toevoegen" onclick="addAddress();">Toevoegen</button>
+        <button id="Verwijderen" onclick="removeAddress();">Verwijderen</button>
+    </div>
+    <div id="Output">
+
+    </div>
+</body>
+</html>
