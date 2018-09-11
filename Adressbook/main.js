@@ -65,10 +65,10 @@ class AdressBook {
     }
 }
 
-var adresbook = null;
+var contactenboek = null;
 
 function documentLoaded(){
-    adresbook = new AdressBook();
+    contactenboek = new AdressBook();
 }
 
 function addAddress(event) {
@@ -78,19 +78,19 @@ function addAddress(event) {
     let nummer = getInputValue("nummer");
     let postcode = getInputValue("postcode");
     let gemeente = getInputValue("gemeente");
-    let testAdres = new Adress(voornaam, achternaam, straatnaam, nummer, postcode, gemeente);
-    adresbook.addAddress(testAdres);
+    let testAdress = new Adress(voornaam, achternaam, straatnaam, nummer, postcode, gemeente);
+    contactenboek.addAddress(testAdress);
     document.getElementById("Output").innerHTML="";
-    document.getElementById("Output").appendChild(adresbook.display());
+    document.getElementById("Output").appendChild(contactenboek.display());
 }
 
 function removeAddress(){
     let voornaam = getInputValue("voornaam");
     let achternaam = getInputValue("achternaam");
     let adress = new Adress(voornaam,achternaam);
-    adresbook.removeAdress(adress);
+    contactenboek.removeAdress(adress);
     document.getElementById("Output").innerHTML="";
-    document.getElementById("Output").appendChild(adresbook.display());
+    document.getElementById("Output").appendChild(contactenboek.display());
 }
 
 function getInputValue(id) {
