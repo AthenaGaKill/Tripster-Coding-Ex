@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //Re-use this Person-class. Make a class Group where you can add multiple objects of the class Person
+        class Person {
+            constructor(name, gender, age, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.age = age;
+                this.weight = weight;
+            }
+        };
+       
+        class Group extends Person {
+            constructor() {
+                super();
+            }
+        }
+        var list = [];
+        var x = 0;
+        do {
+            var create = prompt("Do you want to create a person? Type: Yes/No");
+            if (create == "Yes") {
+                var nameInput = prompt("Gief name!");
+                var genderInput = prompt("Gief gender!");
+                var ageInput = prompt("Gief age!");
+                var weightInput = prompt("Gief weight!");
+            }
+            list[x] = new Person(nameInput, genderInput, ageInput, weightInput);
+            x++;
+
+        } while (create != "No")
+
+        console.log(list);
+
+        //HALP!NOT SURE WHY THE LAST PERSON GETS ADDED DOUBLE EVERY TIME? 
+
+    </script>
+</body>
+
+</html>
