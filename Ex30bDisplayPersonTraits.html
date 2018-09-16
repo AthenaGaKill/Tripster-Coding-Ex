@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //Make a class display that will display the traits that a person has.
+        class Person {
+            constructor(name, gender, age, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.age = age;
+                this.weight = weight;
+            }
+        };
+        var person = new Person('Athena', 'female', 1337, 60);
+
+        class Display extends Person {
+            constructor() {
+                super();
+            }
+        };
+        console.log(`
+        name: ${person.name} 
+        gender: ${person.gender}
+        age: ${person.age}
+        weight: ${person.weight}
+        `);
+        
+    </script>
+</body>
+
+</html>
