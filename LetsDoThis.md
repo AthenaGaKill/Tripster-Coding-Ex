@@ -304,14 +304,18 @@ make a library application. Someone using it should be able to:
 
 Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to the second one
 
-## excercise 30
+## excercise 30 a
 
-Create a Shape class with multiple classes that inherrit this class. Make it so that a user should enter a given shape cherrypicked out of a list of shapes implemented. Once he has pîcked the shape the correct questions should be asked as to be able to calculate the surface of that given shape. After everything is entered the result of the surface of the shape should be returned to the user.
+make a class Person with the typical physioligical traits that one has. Don't go overboard on the amount of details.
 
-### important
+## excercise 30 b
 
-this excercise should be easy extensible by just adding one class derived of shape and adding it in the list of shapes the user can pick from and a switch statement possibly.
+make a class display that will display the traits that a person has
 
-## excercise 31 - callbacks
+## excercise 31
 
-Write a JavaScript program to pass a 'JavaScript function' as parameter
+re-use this Person-class. Make a class Group where you can add multiple objects of the class Person
+
+## excercise 32
+
+make it possible to create a person through whatever interface you would like. (nope a mouse or controler is not a proper interface for this)
