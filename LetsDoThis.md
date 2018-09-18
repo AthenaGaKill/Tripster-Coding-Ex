@@ -315,7 +315,16 @@ make a class display that will display the traits that a person has
 ## excercise 31
 
 re-use this Person-class. Make a class Group where you can add multiple objects of the class Person
-
-## excercise 32
-
 make it possible to create a person through whatever interface you would like. (nope a mouse or controler is not a proper interface for this)
+
+## Excercise 32
+
+Create a class Shape, this shape class contains the name of the shape. Also make 2 other classes Triangle and Square which inherrit from Shape and add a function which allows them to calculate the surface of that object.
+
+implement this in a webpage.
+
+## Excercise 33
+
+make a shape collection that can have mutliple shapes in it and can calculate the total surface within it's shapes.
+
+implement this in a webpage.

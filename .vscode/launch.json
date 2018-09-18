@@ -8,8 +8,11 @@
             "type": "chrome",
             "request": "launch",
             "name": "Ex23",
-            "url": "file://C:/Users/tania/Documents/Exercises%20New/Tripster%20Exercises/Ex23DistanceBetweenPoints.html",
+            "url": "file:///C:/Users/Michel/Source/Repos/Tripster-Coding-Ex/Ex31GroupClass.html",
+            //file:///C:/Users/Michel/Source/Repos/Tripster-Coding-Ex/Ex31GroupClass.html
             "webRoot": "${workspaceFolder}"
-        },
+        }
     ]
 }
+
+// C:\Users\Michel\Source\Repos\Tripster-Coding-Ex\Ex31GroupClass.html
