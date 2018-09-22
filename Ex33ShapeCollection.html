@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //Make a shape collection that can have mutliple shapes in it and can calculate the total surface within it's shapes.
+        class Shape {
+            constructor(name) {
+                this.name;
+            }
+        }
+
+        class Triangle extends Shape {
+            constructor(name, length, width) {
+                super(name);
+                this.length = length;
+                this.width = width;
+            }
+            surfaceTriangle() {
+                let surfaceT = ((this.length * this.width) / 2);
+                return surfaceT;
+            }
+        }
+
+        class Rectangle extends Shape {
+            constructor(name, length, width) {
+                super(name);
+                this.length = length;
+                this.width = width;
+            }
+            surfaceRectangle() {
+                let surfaceR = (this.length * this.width);
+                return surfaceR;
+            }
+        }
+
+        main = () => {
+            let choice = prompt("What do you want to create? Pick: triangle/rectangle?");
+            let t;
+            let r;
+            let surfaceBoth;
+            let result = [];
+            let reducer = (accumulator, currentVal) => accumulator + currentVal;
+
+            while (choice != "triangle" || choice != "rectangle") {
+                if (choice == "triangle") {
+                    // length();
+                    // width();
+                    t = new Triangle("Tripangle", length(), width());
+                    console.log(`The surface of the triangle is: ${t.surfaceTriangle()}`);
+                    result += t.surfaceTriangle();
+                } else {
+                    r = new Rectangle("Rectania", length(), width());
+                    console.log(`The surface of the square is: ${r.surfaceRectangle()}`);
+                    result += r.surfaceTriangle();
+                }
+                //Example of reducer: const array1 = [1, 2, 3, 4];
+                //const reducer = (accumulator, currentValue) => accumulator + currentValue;
+                //console.log(array1.reduce(reducer));
+
+                if (result.length >= 2) {
+                    surfaceBoth = result.reduce(reducer);
+                    console.log(`The surface of both together is: ${surfaceBoth}`);
+                }
+            }
+        }
+        length = () => {
+            let length = prompt("Gief length:");
+            return length;
+        }
+
+        width = () => {
+            let width = prompt("Gief width:");
+            return width;
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
