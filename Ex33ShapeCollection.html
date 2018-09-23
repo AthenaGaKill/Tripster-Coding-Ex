@@ -9,73 +9,89 @@
     <script>
         //Make a shape collection that can have mutliple shapes in it and can calculate the total surface within it's shapes.
         class Shape {
-            constructor(name) {
+            constructor() {
                 this.name;
+
+            }
+            surface() {
+                throw exception('if you can read this you know you did something wrong...')
             }
         }
 
         class Triangle extends Shape {
-            constructor(name, length, width) {
-                super(name);
+            constructor(length, width) {
+                super();
                 this.length = length;
                 this.width = width;
             }
-            surfaceTriangle() {
+            surface() {
                 let surfaceT = ((this.length * this.width) / 2);
                 return surfaceT;
             }
         }
 
         class Rectangle extends Shape {
-            constructor(name, length, width) {
-                super(name);
+            constructor(length, width) {
+                super();
                 this.length = length;
                 this.width = width;
             }
-            surfaceRectangle() {
+            surface() {
                 let surfaceR = (this.length * this.width);
                 return surfaceR;
             }
         }
 
-        main = () => {
-            let choice = prompt("What do you want to create? Pick: triangle/rectangle?");
-            let t;
-            let r;
-            let surfaceBoth;
-            let result = [];
-            let reducer = (accumulator, currentVal) => accumulator + currentVal;
-
-            while (choice != "triangle" || choice != "rectangle") {
-                if (choice == "triangle") {
-                    // length();
-                    // width();
-                    t = new Triangle("Tripangle", length(), width());
-                    console.log(`The surface of the triangle is: ${t.surfaceTriangle()}`);
-                    result += t.surfaceTriangle();
-                } else {
-                    r = new Rectangle("Rectania", length(), width());
-                    console.log(`The surface of the square is: ${r.surfaceRectangle()}`);
-                    result += r.surfaceTriangle();
-                }
-                //Example of reducer: const array1 = [1, 2, 3, 4];
-                //const reducer = (accumulator, currentValue) => accumulator + currentValue;
-                //console.log(array1.reduce(reducer));
-
-                if (result.length >= 2) {
-                    surfaceBoth = result.reduce(reducer);
-                    console.log(`The surface of both together is: ${surfaceBoth}`);
+        class IrregularShape extends Shape {
+            constructor() {
+                this.shapes = [];
+            }
+            surface() {
+                let result = 0;
+                for (let index = 0; index < this.shapes.length; index++) {
+                    result += this.shapes[index].surface();
                 }
             }
         }
-        length = () => {
+
+        main = () => {
+
+            let choice = prompt("What do you want to create? Pick: triangle/rectangle?");
+            let irregularForm = new IrregularShape();
+            while (choice != "triangle" && choice != "rectangle") {
+                choice = prompt("What do you want to create? Pick: triangle/rectangle?");
+                let s = null;
+                if (choice == "triangle") {
+                    s = newTriangle();
+                } else {
+                    s = newRectangle();
+                }
+                console.log(s.surface());
+                irregularForm.shapes.push(s);
+            }
+            console.log(irregularForm.surface());
+        }
+        
+        function length() {
             let length = prompt("Gief length:");
             return length;
         }
 
-        width = () => {
+        function width() {
             let width = prompt("Gief width:");
             return width;
+        }
+
+        function newTriangle() {
+            let t = new Triangle(length(), width());
+            console.log(`The surface of the triangle is: ${t.surface()}`);
+            return t;
+        }
+
+        function newRectangle() {
+            let r = new Rectangle(length(), width());
+            console.log(`The surface of the square is: ${r.surface()}`);
+            return r;
         }
 
         main();

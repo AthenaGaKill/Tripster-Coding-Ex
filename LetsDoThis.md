@@ -329,6 +329,11 @@ make a shape collection that can have mutliple shapes in it and can calculate th
 
 implement this in a webpage.
 
+## Detention excercise
+
+Build an adressbook that can contain the adress of multiple people. These people have an name,adress,telephonenumber. However we also have Friends of which we might want to remember the birthday off. Both classes should implement a function print which shows all the properties of that object.
+You should be able to find a person by name.
+
 ## Excercise 34
 
 use the Document object to build a form that contains the following fields. Don't forget to check for the ready state before you start createing these elements. Otherwise the code might just fail because there is not document object present or no body object present.
@@ -348,7 +353,7 @@ The Add button has followng characteristics
 
 ## Excercise 35
 
-use the document object to build a page with a parpagrph element and a input element. The paragraph an dthe input element are linked.
+use the document object to build a page with a parpagraph element and a input element. The paragraph and the input element are linked.
 Which means if input is entered in the input element the changes get refelected to the paragraph element. Also add a clear button which will clear the paragraph and the input element.
 
 ## Excecise 36
