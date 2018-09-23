@@ -357,5 +357,5 @@ Create a page with one text field and one button. If a colorcode hex is entered 
 
 ## Excercise 37
 
-Let's look at the intface of the game hangman and find the different UI elements that there are in that game and break them down.
+Let's look at the interface of the game hangman and find the different UI elements that there are in that game and break them down.
 Make sure to have that breakdown before next session in 2 weeks since it might be interesting to go over that as an excercise into reverse engineering how things work and a good excercise on analysis as well.
