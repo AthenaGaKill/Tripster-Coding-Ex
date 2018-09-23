@@ -353,5 +353,9 @@ Which means if input is entered in the input element the changes get refelected 
 
 ## Excecise 36
 
-Create a page with 2 input controls, one text field and one button. If a colorcode hex is entered into the textfield and the user presses on the button it should reflect the color entered in the text input.
+Create a page with one text field and one button. If a colorcode hex is entered into the textfield and the user presses on the button it should reflect the color entered in the text input.
 
+## Excercise 37
+
+Let's look at the intface of the game hangman and find the different UI elements that there are in that game and break them down.
+Make sure to have that breakdown before next session in 2 weeks since it might be interesting to go over that as an excercise into reverse engineering how things work and a good excercise on analysis as well.
