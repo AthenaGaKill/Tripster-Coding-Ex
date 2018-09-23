@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        //Create a class Shape, this shape class contains the name of the shape. 
+        //Also make 2 other classes Triangle and Square which inherrit from Shape and add a function which allows them to calculate the surface of that object.
+        class Shape {
+            constructor(name) {
+                this.name = name;
+            }
+
+        }
+        //I would normally add length and width to the shape class as well but since you mentioned it only contains the name I figured
+        //it was to make it harder and to practice adding and using properties in other classes:)
+        class Triangle extends Shape {
+            constructor(name, length, width) {
+                super(name);
+                this.length = length;
+                this.width = width;
+            }
+            surfaceTriangle() {
+                let surfaceT = ((this.length * this.width) / 2);
+                return surfaceT;
+            }
+        }
+        let t = new Triangle("Tripangle", 3, 3);
+        //How would I be able to access Tripangle here? t.name gave undefined...
+        console.log(`The surface of the triangle is: ${t.surfaceTriangle()}`);
+
+
+        class Rectangle extends Shape {
+            constructor(name, length, width) {
+                super(name);
+                this.length = length;
+                this.width = width;
+            }
+            surfaceRectangle() {
+                let surfaceR = (this.length * this.width);
+                return surfaceR;
+            }
+        }
+        let r = new Rectangle("Rectania", 5, 5);
+        console.log(`The surface of the square is: ${r.surfaceRectangle()}`);
+
+        let surfaceBoth = (t.surfaceTriangle() + r.surfaceRectangle());
+        console.log(`The surface of both together is: ${surfaceBoth}`);
+
+    </script>
+</body>
+
+</html>

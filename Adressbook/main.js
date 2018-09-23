@@ -22,8 +22,8 @@ class Adress {
         listItemElement.innerText = text;
         return listItemElement;
     }
-    equals(otherAdress){
-        return this.voornaam == otherAdress.voornaam && this.achternaam==otherAdress.achternaam;
+    equals(otherAdress) {
+        return this.voornaam == otherAdress.voornaam && this.achternaam == otherAdress.achternaam;
     }
 }
 
@@ -31,26 +31,31 @@ class AdressBook {
     constructor() {
         this.adresses = [];
     }
-    addAddress(adress) {
-        this.adresses.push(adress);
+    addAddress(adress) { //double check adress to prevent dublicates
+        this.adresses.forEach(a => {
+            if (!a.equals(adress)) {
+                this.adresses.push(adress);
+            }
+        });
     }
-    removeAdress(adressToDelete){
+
+    removeAdress(adressToDelete) {
         let adressFound = this.findAdress(adressToDelete);
-        if(adressFound != null){
-            for(let i=0;i<this.adresses.length;i++){
-                if(this.adresses[i].equals(adressFound)){
-                    this.adresses.splice(i,1);
+        if (adressFound != null) {
+            for (let i = 0; i < this.adresses.length; i++) {
+                if (this.adresses[i].equals(adressFound)) {
+                    this.adresses.splice(i, 1);
                     break;
                 }
             }
         }
     }
 
-    findAdress(searchAdress){
-        let foundAdress=null;
+    findAdress(searchAdress) {
+        let foundAdress = null;
         this.adresses.forEach(adress => {
-            if(adress.equals(searchAdress)){
-                foundAdress = {...adress};
+            if (adress.equals(searchAdress)) {
+                foundAdress = { ...adress };
             }
         });
         return foundAdress;
@@ -67,7 +72,7 @@ class AdressBook {
 
 var contactenboek = null;
 
-function documentLoaded(){
+function documentLoaded() {
     contactenboek = new AdressBook();
 }
 
@@ -80,16 +85,16 @@ function addAddress(event) {
     let gemeente = getInputValue("gemeente");
     let testAdress = new Adress(voornaam, achternaam, straatnaam, nummer, postcode, gemeente);
     contactenboek.addAddress(testAdress);
-    document.getElementById("Output").innerHTML="";
+    document.getElementById("Output").innerHTML = "";
     document.getElementById("Output").appendChild(contactenboek.display());
 }
 
-function removeAddress(){
+function removeAddress() {
     let voornaam = getInputValue("voornaam");
     let achternaam = getInputValue("achternaam");
-    let adress = new Adress(voornaam,achternaam);
+    let adress = new Adress(voornaam, achternaam);
     contactenboek.removeAdress(adress);
-    document.getElementById("Output").innerHTML="";
+    document.getElementById("Output").innerHTML = "";
     document.getElementById("Output").appendChild(contactenboek.display());
 }
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="ex31.js"></script>
+
+</head>
+
+<body>
+<<<<<<< HEAD
+    <script>
+        //Re-use this Person-class. Make a class Group where you can add multiple objects of the class Person
+        class Person {
+            constructor(name, gender, age, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.age = age;
+                this.weight = weight;
+            }
+        };
+
+        class Group extends Person {
+            constructor() {
+                super();
+            }
+        }
+
+        let create = prompt("Do you want to create a person? Type: Yes/No");
+        let list = [];
+        let x = 0;
+        while (create != "No") {
+            if (create == "Yes") {
+                let nameInput = prompt("Gief name!");
+                let genderInput = prompt("Gief gender!");
+                let ageInput = prompt("Gief age!");
+                let weightInput = prompt("Gief weight!");
+            }
+            list[x] = new Person(nameInput, genderInput, ageInput, weightInput);
+            x++;
+            create = prompt("Do you want to create a person? Type: Yes/No");
+        }
+
+        console.log(list);
+
+    </script>
+=======
+>>>>>>> a3748a3b735380baeee6a2bcce83ed4f8aa156fc
+</body>
+
+</html>
