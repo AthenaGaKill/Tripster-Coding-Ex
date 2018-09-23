@@ -333,14 +333,16 @@ implement this in a webpage.
 
 use the Document object to build a form that contains the following fields. Don't forget to check for the ready state before you start createing these elements. Otherwise the code might just fail because there is not document object present or no body object present.
 
-* name - this is a textbox where a user can enter his name *required*
-* adress - this a textbox where a user can enter his adress
-* phonenumber - this a textbox where a user can enter his phone number
+- name - this is a textbox where a user can enter his name *required*
+- adress - this a textbox where a user can enter his adress
+- phonenumber - this a textbox where a user can enter his phone number
 
 The phonenumber field should have validation on it so that when the user moves to another field it shows an error message saying that the input is not valid. 
 When at any point it contanis a valid input the error message shouldn't appear or should be removed by the code.
 
 also add an "Add" button which will add the adress in an array that you keep outside of your main function so that it is available in the global scope.
 The Add button has followng characteristics
-* it is clickeable only if all the required fields are filled in
-* there should be no validation errors on other fields
+
+- it is clickeable only if all the required fields are filled in
+- there should be no validation errors on other fields
+
