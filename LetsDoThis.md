@@ -325,6 +325,6 @@ implement this in a webpage.
 
 ## Excercise 33
 
-make a shape collection that can have mutliple shapes in it and can calculate the total surface within it's shapes.
+make a shape collection that can have mutliple shapes in it and can calculate the total surface of the shapes.
 
 implement this in a webpage.
