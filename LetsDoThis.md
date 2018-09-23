@@ -346,3 +346,12 @@ The Add button has followng characteristics
 - it is clickeable only if all the required fields are filled in
 - there should be no validation errors on other fields
 
+## Excercise 35
+
+use the document object to build a page with a parpagrph element and a input element. The paragraph an dthe input element are linked.
+Which means if input is entered in the input element the changes get refelected to the paragraph element. Also add a clear button which will clear the paragraph and the input element.
+
+## Excecise 36
+
+Create a page with 2 input controls, one text field and one button. If a colorcode hex is entered into the textfield and the user presses on the button it should reflect the color entered in the text input.
+
