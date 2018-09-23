@@ -11,3 +11,12 @@ Build a user interface with these components that you have described before. Mak
 ## logic
 
 Make a design on how you look at a calculator from an object oriented point of view. (if we havent't covered this at this point make sure to send me a reminder as we need to be able to express ourselvesd with out having to write code all thet time. That would be boring wouldn't it)
+
+After we have validated this class design together now let's start building the program:
+
+1. Build the general structure of your class
+2. build from the ground up working and finishing one component at a time
+   1. start with the input
+   2. add the calculations
+   3. add the memory buttons
+   4. add the clear button
