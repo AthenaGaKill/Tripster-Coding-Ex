@@ -328,3 +328,34 @@ implement this in a webpage.
 make a shape collection that can have mutliple shapes in it and can calculate the total surface of the shapes.
 
 implement this in a webpage.
+
+## Excercise 34
+
+use the Document object to build a form that contains the following fields. Don't forget to check for the ready state before you start createing these elements. Otherwise the code might just fail because there is not document object present or no body object present.
+
+- name - this is a textbox where a user can enter his name *required*
+- adress - this a textbox where a user can enter his adress
+- phonenumber - this a textbox where a user can enter his phone number
+
+The phonenumber field should have validation on it so that when the user moves to another field it shows an error message saying that the input is not valid. 
+When at any point it contanis a valid input the error message shouldn't appear or should be removed by the code.
+
+also add an "Add" button which will add the adress in an array that you keep outside of your main function so that it is available in the global scope.
+The Add button has followng characteristics
+
+- it is clickeable only if all the required fields are filled in
+- there should be no validation errors on other fields
+
+## Excercise 35
+
+use the document object to build a page with a parpagrph element and a input element. The paragraph an dthe input element are linked.
+Which means if input is entered in the input element the changes get refelected to the paragraph element. Also add a clear button which will clear the paragraph and the input element.
+
+## Excecise 36
+
+Create a page with one text field and one button. If a colorcode hex is entered into the textfield and the user presses on the button it should reflect the color entered in the text input.
+
+## Excercise 37
+
+Let's look at the interface of the game hangman and find the different UI elements that there are in that game and break them down.
+Make sure to have that breakdown before next session in 2 weeks since it might be interesting to go over that as an excercise into reverse engineering how things work and a good excercise on analysis as well.
