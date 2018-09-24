@@ -5,3 +5,4 @@ After you requested this. I will try to find good articles that explain what we 
 ## objects
 
 - [object basics](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics)
+- [a lot of excercises on class, objects inheritance and a number of patterns](http://www.ntu.edu.sg/home/ehchua/programming/java/J3f_OOPExercises.html) sidenote...they still need some translation work to javascript. Guess what I'll be doing over the next week or so. 🎉
