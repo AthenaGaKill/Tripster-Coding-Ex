@@ -18,7 +18,7 @@
             }
         }
 
-        class Triangle extends Shape { 
+        class Triangle extends Shape {
             constructor(length, width) { //Possibility to change length and width for each object.
                 super(); //Allows us to use the constructor from the parent class.
                 this.length = length;
@@ -42,8 +42,10 @@
             }
         }
 
-        class IrregularShape extends Shape { 
+        class IrregularShape extends Shape {
             constructor() {
+                //oops we forgot to call the super first... he was pissed so I added him
+                super();
                 this.shapes = []; //An empty array to add all objects in.
             }
             surface() {
@@ -51,16 +53,17 @@
                 for (let index = 0; index < this.shapes.length; index++) { //this.shapes.length = the amount of objects (does not incl the surfaces of them)
                     result += this.shapes[index].surface(); //From each object we calculate the surface.
                 }
+                //added the return of the result here so that we got the correct surface
+                return result;
             }
         }
 
         main = () => {
 
-            let choice = prompt("What do you want to create? Pick: triangle/rectangle?"); 
+            let choice = prompt("What do you want to create? Pick: triangle/rectangle?");
             let irregularForm = new IrregularShape(); //We already create a new irregular object here so we can access het later on.
 
-            while (choice != "triangle" && choice != "rectangle") {
-                choice = prompt("What do you want to create? Pick: triangle/rectangle?");
+            while (choice == "triangle" || choice == "rectangle") {
                 let s = null; //Will be the variable that stores het new object.
                 if (choice == "triangle") {
                     s = newTriangle(); //s stores a new triangle.
@@ -69,10 +72,13 @@
                 }
                 console.log(s.surface()); //We log the surface of the new object.
                 irregularForm.shapes.push(s); //We add the new object to the array shapes which we defined in the IrregularShape class.
-                        }
+                //calculate that total surface yo
+                //let's move the second input down here. Otherwise the first time we go through the code there are 2 prompts instead of 1.
+                choice = prompt("What do you want to create? Pick: triangle/rectangle?");
+            }
             console.log(irregularForm.surface());
         }
-        
+
         function length() {
             let length = prompt("Gief length:");
             return length;
