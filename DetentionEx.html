@@ -63,14 +63,17 @@
                 let input = prompt("Do you want to make a new contact? Y/N");
                 let choice = prompt("What type of contact do you like to add? Friend/General?");
                 let contact;
-                if (choice.toUpperCase == "Friend") {
+                    //when adding to uppsercase best is to add it both to the object you want to compare and to the object you want to compare it to
+
+                if (choice.toUpperCase() == "Friend".toUpperCase()) {
                     let nameInput = prompt("Contact's name: ");
                     let adressInput = prompt("Contact's adress: ");
                     let phoneNrInput = prompt("Contact's phonenr: ");
                     let birthdayInput = prompt("Contact's birthday: ");
                     //We add the arguments(all the input info), which get used by the constructor, to the object and create a new friend.
                     contact = new Friends(nameInput, adressInput, phoneNrInput, birthdayInput);
-                } else if (choice.toUpperCase == "General") {
+                    //when adding to uppsercase best is to add it both to the object you want to compare and to the object you want to compare it to
+                } else if (choice.toUpperCase() == "General".toUpperCase()) {
                     let nameInput = prompt("Contact's name: ");
                     let adressInput = prompt("Contact's adress: ");
                     let phoneNrInput = prompt("Contact's phonenr: ");
