@@ -355,6 +355,7 @@ The Add button has followng characteristics
 
 use the document object to build a page with a parpagraph element and a input element. The paragraph and the input element are linked.
 Which means if input is entered in the input element the changes get refelected to the paragraph element. Also add a clear button which will clear the paragraph and the input element.
+[excercise 34](#Excercise-34)
 
 ## Excecise 36
 
