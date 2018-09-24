@@ -8,25 +8,25 @@
 <body>
     <script>
         //Make a shape collection that can have mutliple shapes in it and can calculate the total surface within it's shapes.
-        class Shape {
-            constructor() {
-                this.name;
 
+        class Shape { //Abstract class that tells us we'll be working with shapes.
+            constructor() { //Constructor = add params here if you want to be able to modify each object you make based on this template.
+                this.name; //props you want to use with this object.
             }
             surface() {
-                throw exception('if you can read this you know you did something wrong...')
+                throw exception('if you can read this you know you did something wrong...'); //When doing something wrong in the other classes it will give this error!
             }
         }
 
-        class Triangle extends Shape {
-            constructor(length, width) {
-                super();
+        class Triangle extends Shape { 
+            constructor(length, width) { //Possibility to change length and width for each object.
+                super(); //Allows us to use the constructor from the parent class.
                 this.length = length;
                 this.width = width;
             }
-            surface() {
-                let surfaceT = ((this.length * this.width) / 2);
-                return surfaceT;
+            surface() { //A method to calculate the surface of a triangle.
+                let surfaceT = ((this.length * this.width) / 2); //We use 'this' within the class to refer to the current object.
+                return surfaceT; //We return the result.
             }
         }
 
@@ -42,33 +42,34 @@
             }
         }
 
-        class IrregularShape extends Shape {
+        class IrregularShape extends Shape { 
             constructor() {
-                this.shapes = [];
+                this.shapes = []; //An empty array to add all objects in.
             }
             surface() {
-                let result = 0;
-                for (let index = 0; index < this.shapes.length; index++) {
-                    result += this.shapes[index].surface();
+                let result = 0; //Remember block scope! Needs to be initialized outside the loop to be able to access result also outside of it.
+                for (let index = 0; index < this.shapes.length; index++) { //this.shapes.length = the amount of objects (does not incl the surfaces of them)
+                    result += this.shapes[index].surface(); //From each object we calculate the surface.
                 }
             }
         }
 
         main = () => {
 
-            let choice = prompt("What do you want to create? Pick: triangle/rectangle?");
-            let irregularForm = new IrregularShape();
+            let choice = prompt("What do you want to create? Pick: triangle/rectangle?"); 
+            let irregularForm = new IrregularShape(); //We already create a new irregular object here so we can access het later on.
+
             while (choice != "triangle" && choice != "rectangle") {
                 choice = prompt("What do you want to create? Pick: triangle/rectangle?");
-                let s = null;
+                let s = null; //Will be the variable that stores het new object.
                 if (choice == "triangle") {
-                    s = newTriangle();
+                    s = newTriangle(); //s stores a new triangle.
                 } else {
-                    s = newRectangle();
+                    s = newRectangle(); //s stores a new rectangle.
                 }
-                console.log(s.surface());
-                irregularForm.shapes.push(s);
-            }
+                console.log(s.surface()); //We log the surface of the new object.
+                irregularForm.shapes.push(s); //We add the new object to the array shapes which we defined in the IrregularShape class.
+                        }
             console.log(irregularForm.surface());
         }
         

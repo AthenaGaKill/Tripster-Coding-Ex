@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // Build an adressbook that can contain the adress of multiple people.These people have an name, adress, telephonenumber.
+        // However we also have Friends of which we might want to remember the birthday off.Both classes should implement a function 
+        // print which shows all the properties of that object.You should be able to find a person by name.
+
+        class People {
+            constructor(name, adress, phoneNr) {
+                this.name = name;
+                this.adress = adress;
+                this.phoneNr = phoneNr;
+            }
+            print() {
+                this.name;
+                this.adress;
+                this.phoneNr;
+            }
+        }
+        let person = new People("Trippy", "Hell", 666);
+
+        class Friends {
+            constructor(name, adress, phoneNr, birthday) {
+                super(name, adress, phoneNr); //Calls the parent constructor.
+                this.birthday = birthday;
+            }
+            print() {
+                this.name;
+                this.adress;
+                this.phoneNr;
+                this.birthday;
+            }
+        }
+        let friend = new Friends("Satan", "Hell", 666, "6/6/666")
+
+        class AdressBook { //Adressbook = a collection of all adresses of both friends as other people.
+            constructor() { //We are not passing through any arguments so the constructor is empty.
+                this.book = []; //An empty adressbook.
+            }
+            print() { //All adresses together.
+                let adresses;
+                for (let index = 0; index < this.book.length; index++) {
+                    adresses = this.book[index].print();
+                }
+            }
+
+            search() { //Find a person by name.
+                let find = prompt("Give the name in of the person you'd like to look for: ");
+               //Got a bit stuck here...
+            }
+        }
+
+        main = () => {
+            let adress = new AdressBook();
+            //As long as you want to keep adding contacts...
+            do {
+                let input = prompt("Do you want to make a new contact? Y/N");
+                let choice = prompt("What type of contact do you like to add? Friend/General?");
+                let contact;
+                if (choice.toUpperCase == "Friend") {
+                    let nameInput = prompt("Contact's name: ");
+                    let adressInput = prompt("Contact's adress: ");
+                    let phoneNrInput = prompt("Contact's phonenr: ");
+                    let birthdayInput = prompt("Contact's birthday: ");
+                    //We add the arguments(all the input info), which get used by the constructor, to the object and create a new friend.
+                    contact = new Friends(nameInput, adressInput, phoneNrInput, birthdayInput);
+                } else if (choice.toUpperCase == "General") {
+                    let nameInput = prompt("Contact's name: ");
+                    let adressInput = prompt("Contact's adress: ");
+                    let phoneNrInput = prompt("Contact's phonenr: ");
+                    contact = new People(nameInput, adressInput, phoneNrInput);
+                }
+                console.log(contact.print()); //To see the contact added.
+                adress.book.push(contact);//We access the class via adress and in the array, which we declared there, we add a contact.
+            } while (input = "Y");
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
