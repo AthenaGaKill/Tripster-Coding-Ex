@@ -336,6 +336,38 @@ You should be able to find a person by name.
 
 ## Excercise 34
 
+We're going to dive into books today...
+Make a class Author. (as towards the pictures they are more informational to visualize things)
+
+![Author class](http://www.ntu.edu.sg/home/ehchua/programming/java/images/ExerciseOOP_Author.png)
+
+Author has 3 properties:
+- name
+- email
+- gender
+
+Author also has one constructor namelay one that takes all 3 of these arguments.
+Create getters and setters for all of these properties.
+Write out all the values of these properties in a method called "toString()".
+
+A class called Book is designed (as shown in the class diagram) to model a book written by one author. It contains:
+
+Four properties:
+
+1. name (String)
+2. author (of the class Author you have just created, assume that a book has one and only one author)
+3. price (number)
+4. qty (number)
+
+![Book class](http://www.ntu.edu.sg/home/ehchua/programming/java/images/ExerciseOOP_Book.png)
+
+make getters and setters for these properties.
+make a "tostring" function that will show these properties in text.
+
+
+
+## Excercise 35
+
 use the Document object to build a form that contains the following fields. Don't forget to check for the ready state before you start createing these elements. Otherwise the code might just fail because there is not document object present or no body object present.
 
 - name - this is a textbox where a user can enter his name *required*
@@ -351,17 +383,17 @@ The Add button has followng characteristics
 - it is clickeable only if all the required fields are filled in
 - there should be no validation errors on other fields
 
-## Excercise 35
+## Excercise 36
 
 use the document object to build a page with a parpagraph element and a input element. The paragraph and the input element are linked.
 Which means if input is entered in the input element the changes get refelected to the paragraph element. Also add a clear button which will clear the paragraph and the input element.
-[excercise 34](#Excercise-34)
+[excercise 35](#Excercise-35)
 
-## Excecise 36
+## Excecise 37
 
 Create a page with one text field and one button. If a colorcode hex is entered into the textfield and the user presses on the button it should reflect the color entered in the text input.
 
-## Excercise 37
+## Excercise 38
 
 Let's look at the interface of the game hangman and find the different UI elements that there are in that game and break them down.
 Make sure to have that breakdown before next session in 2 weeks since it might be interesting to go over that as an excercise into reverse engineering how things work and a good excercise on analysis as well.
